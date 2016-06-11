@@ -1,0 +1,14 @@
+{ "speakers" : [
+  {
+    "name":"John Doe",
+    "shortname":"JDoe",
+    "reknown":"Artist",
+    "bio":"Hello World"
+  },
+  {
+    "name":"John Doe 2",
+    "shortname":"JDoe2",
+    "reknown":"Artist 2",
+    "bio":"Hello World 2"
+  }
+]}

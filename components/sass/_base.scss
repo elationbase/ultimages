@@ -1,0 +1,21 @@
+// _base.scss
+// ==============
+body {
+  font-family: $bodyFont;
+  font-size: 1.1em;
+  background: url(../img/amnesia.png) black;
+}
+
+#content {
+  color: $dark;
+  font-size: 2em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow:  0 0 0 #000;
+  border-radius: 5px;
+}
