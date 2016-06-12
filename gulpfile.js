@@ -19,6 +19,7 @@ var htmlFiles = ['builds/development/*.html'],
 			'components/scripts/libs/angular/angular-animate.min.js',
 			'components/scripts/app.js',
 			'components/scripts/controllers.js',
+			'components/scripts/directives.js',
 			'components/scripts/global.js'
 		],
 		sassFiles = ['components/sass/style.scss'],
