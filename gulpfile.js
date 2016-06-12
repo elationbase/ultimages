@@ -71,7 +71,7 @@ gulp.task('sass', function () {
 
 // Images files
 gulp.task('img', function () {
-    return gulp
+  return gulp
 		.src(imgFiles)
 		.pipe(gulpif(env === 'production', gulp.dest(outputDir+ 'img')))
 		.pipe(connect.reload())
@@ -107,7 +107,7 @@ gulp.task('watch', function () {
 	gulp.watch(jsFiles, ['js']);
 	gulp.watch('components/sass/*.scss', ['sass']);
 	gulp.watch(htmlFiles, ['html']);
-	gulp.watch(htmlFiles, ['views']);
+	gulp.watch(viewFiles, ['views']);
 	gulp.watch(imgFiles, ['img']);
 });
 
