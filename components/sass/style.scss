@@ -1,15 +1,22 @@
 // style.scss
 // ==============
 
-//Core partials
+//Utilities partials
 @import "variables";
 @import "mixins";
-@import "reset";
 @import "jeet/jeet";
+
+//reset
+@import "reset";
+
+//Fonts partials
 @import "elationbase";
+@import "ultimages";
+
+//Core partials
 @import "base";
 @import "modules";
-@import "header"; 
+@import "header";
 
 // Views partials
 @import "details";
