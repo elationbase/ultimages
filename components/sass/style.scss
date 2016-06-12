@@ -1,12 +1,14 @@
 // style.scss
 // ==============
 
-//Compass imports
-
 //Core partials
 @import "variables";
 @import "mixins";
+@import "reset";
+@import "jeet/jeet";
+@import "elationbase";
 @import "base";
 @import "modules";
 
-// JS partials
+// Views partials
+@import "details"

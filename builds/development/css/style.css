@@ -1,46 +1,111 @@
+/* Reset Styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Elation Base';
+  src: url("fonts/elationbase/eb-light-webfont.eot");
+  src: url("fonts/elationbase/eb-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/elationbase/eb-light-webfont.woff2") format("woff2"), url("fonts/elationbase/eb-light-webfont.woff") format("woff"), url("fonts/elationbase/eb-light-webfont.ttf") format("truetype"), url("fonts/elationbase/eb-light-webfont.svg#eb_light") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Elation Base';
+  src: url("fonts/elationbase/eb-regular-webfont.eot");
+  src: url("fonts/elationbase/eb-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/elationbase/eb-regular-webfont.woff2") format("woff2"), url("fonts/elationbase/eb-regular-webfont.woff") format("woff"), url("fonts/elationbase/eb-regular-webfont.ttf") format("truetype"), url("fonts/elationbase/eb-regular-webfont.svg#eb_regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  font-family: serif;
-  font-size: 1.1em;
-  background: url(../img/amnesia.png) black;
+  font-family: "Elation Base", sans-serif;
+  font-size: 10px;
+  background: #2c3e50;
+  color: #F1F1F1;
 }
 
-#content {
-  color: #073642;
-  font-size: 2em;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Elation Base", sans-serif;
+  font-weight: 200;
+  font-size: 4.0em;
 }
 
-.container {
+.wrapper {
+  *zoom: 1;
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  box-shadow: 0 0 0 #000;
-  border-radius: 5px;
 }
 
-.flex {
-  -ms-flex: 8;
-      flex: 8;
-  box-shadow: 0 0 50px #000;
-  transition: all 0.5s ease-in-out;
+.wrapper:before, .wrapper:after {
+  content: '';
+  display: table;
 }
 
-:-webkit-full-screen a {
-  transition: transform 1s ease;
+.wrapper:after {
+  clear: both;
 }
 
-:-moz-full-screen a {
-  transition: transform 1s ease;
-}
-
-:-ms-fullscreen a {
-  transition: transform 1s ease;
-}
-
-:fullscreen a {
-  transition: transform 1s ease;
-}
-
-.test {
-  box-sizing: border-box;
+.face {
+  border-radius: 50%;
 }

@@ -1,10 +1,5 @@
 // _modules.scss
 // ============
-.flex { flex: 8; box-shadow: 0 0 50px #000; transition: all 0.5s ease-in-out; }
-
-:fullscreen a {
-    transition: transform 1s ease;
-}
-.test {
-  box-sizing: border-box;
+.face {
+  border-radius: 50%;
 }
