@@ -23,7 +23,7 @@
   </div>
   <ul class="userlist" ng-show="query">
     <li ng-animate="'animate'" class="user cf" ng-repeat="item in users | filter: query | orderBy: userOrder:direction">
-      <a href="#/details/{{users.indexOf(item)}}">
+      <a href="#/user/{{users.indexOf(item)}}">
         <img class="face" ng-src="img/{{item.shortname}}.jpg" alt="Photo of {{item.name}}">
         <div class="info">
           <h2>{{item.name}}</h2>

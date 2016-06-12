@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', [
   'ngRoute',
-  'userControllers'
+  'usersControllers'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider) {
@@ -9,9 +9,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'views/list.html',
     controller: 'ListController'
   }).
-  when('/details/:itemId', {
-    templateUrl: 'views/details.html',
-    controller: 'DetailsController'
+  when('/user/:itemId', {
+    templateUrl: 'views/user.html',
+    controller: 'UserController'
   }).
   otherwise({
     redirectTo: '/list'

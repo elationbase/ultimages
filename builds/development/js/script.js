@@ -9455,7 +9455,7 @@ e(c,"-add"),d)},beforeRemoveClass:function(a,c,d){var f=L(a,e(c,"-remove"),funct
 
 var myApp = angular.module('myApp', [
   'ngRoute',
-  'userControllers'
+  'usersControllers'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider) {
@@ -9464,16 +9464,16 @@ myApp.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'views/list.html',
     controller: 'ListController'
   }).
-  when('/details/:itemId', {
-    templateUrl: 'views/details.html',
-    controller: 'DetailsController'
+  when('/user/:itemId', {
+    templateUrl: 'views/user.html',
+    controller: 'UserController'
   }).
   otherwise({
     redirectTo: '/list'
   });
 }]);
 
-var userControllers = angular.module('userControllers', ['ngAnimate']);
+var userControllers = angular.module('usersControllers', ['ngAnimate']);
 
 userControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
   $http.get('/js/data.json').success(function(data) {
@@ -9482,7 +9482,7 @@ userControllers.controller('ListController', ['$scope', '$http', function($scope
   });
 }]);
 
-userControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
+userControllers.controller('UserController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
   $http.get('js/data.json').success(function(data) {
     $scope.users = data;
     $scope.whichItem = $routeParams.itemId;
