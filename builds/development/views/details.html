@@ -1,0 +1,21 @@
+<article ng-model="users">
+  <header class="{{users[whichItem].shortname}}">
+    <img class="face" ng-src="img/{{users[whichItem].shortname}}.jpg" alt="Photo of {{users[whichItem].name}}">
+    <h1>{{users[whichItem].name}}</h1>
+    <h3>{{users[whichItem].member}}</h3>
+    <div class="bio">{{users[whichItem].bio}}</div>
+  </header>
+  <section>
+    <ul>
+      <li ng-repeat="file in users[whichItem].files">
+        {{file.name}}<br>
+        {{users[whichItem].name}}<br>
+        {{file.datecreated}}<br>
+        {{file.datemodify}}<br>
+        {{file.size}}<br>
+        {{file.type}}<br>
+      </li>
+    <ul>
+    <a href="/">&laquo; Back to search</a>
+  </section>
+</article>

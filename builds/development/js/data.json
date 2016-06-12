@@ -1,14 +1,68 @@
-{ "speakers" : [
+[
   {
     "name":"John Doe",
-    "shortname":"JDoe",
-    "reknown":"Artist",
-    "bio":"Hello World"
+    "shortname":"john-doe",
+    "member":"Jan. 2016",
+    "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.",
+    "files": {
+      "01": {
+        "name": "helo world",
+        "datecreated": "Jan 1, 2016",
+        "datemodify": "Jan 2, 2016",
+        "size": "122kb",
+        "type": "jpg"
+      },
+      "02": {
+        "name": "helo world 2",
+        "datecreated": "Jan 1, 2016",
+        "datemodify": "Jan 2, 2016",
+        "size": "122kb",
+        "type": "jpg"
+      }
+    }
   },
-  {
-    "name":"John Doe 2",
-    "shortname":"JDoe2",
-    "reknown":"Artist 2",
-    "bio":"Hello World 2"
-  }
-]}
+    {
+      "name":"Rachel Doe",
+      "shortname":"rachel-doe",
+      "member":"Jan. 2016",
+      "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.",
+      "files": {
+        "01": {
+          "name": "helo world",
+          "datecreated": "Jan 1, 2016",
+          "datemodify": "Jan 2, 2016",
+          "size": "122kb",
+          "type": "jpg"
+        },
+        "02": {
+          "name": "helo world 2",
+          "datecreated": "Jan 1, 2016",
+          "datemodify": "Jan 2, 2016",
+          "size": "122kb",
+          "type": "jpg"
+        }
+      }
+    },
+      {
+        "name":"Ronald Doe",
+        "shortname":"ronald-doe",
+        "member":"Jan. 2016",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.",
+        "files": {
+          "01": {
+            "name": "helo world",
+            "datecreated": "Jan 1, 2016",
+            "datemodify": "Jan 2, 2016",
+            "size": "122kb",
+            "type": "jpg"
+          },
+          "02": {
+            "name": "helo world 2",
+            "datecreated": "Jan 1, 2016",
+            "datemodify": "Jan 2, 2016",
+            "size": "122kb",
+            "type": "jpg"
+          }
+        }
+      }
+]

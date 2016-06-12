@@ -13,8 +13,13 @@ var gulp = require('gulp'),
 // File Location vars
 var htmlFiles = ['builds/development/*.html'],
 		jsFiles   = [
-			'components/scripts/libs/*.js',
-			'components/scripts/*.js'
+			'components/scripts/libs/jquery-2.1.4.js',
+			'components/scripts/libs/angular/angular.min.js',
+			'components/scripts/libs/angular/angular-route.min.js',
+			'components/scripts/libs/angular/angular-animate.min.js',
+			'components/scripts/app.js',
+			'components/scripts/controllers.js',
+			'components/scripts/global.js'
 		],
 		sassFiles = ['components/sass/style.scss'],
 		htmlFiles = [
