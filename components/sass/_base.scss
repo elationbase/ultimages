@@ -9,13 +9,24 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $headFont;
   font-weight: 200;
-  font-size: 4.0em;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+  transition: (all, 0.4s, ease-out);
+  &:hover, &:focus {
+    color: $light;
+  }
+  &:active {
+    color: $green;
+  }
 }
 
 .wrapper {
   @include j-cf();
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
+  padding: 0 80px;
   margin: 0 auto;
   position: relative;
 }

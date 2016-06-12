@@ -1,21 +1,66 @@
 <article ng-model="users">
-  <header class="{{users[whichItem].shortname}}">
+  <header class="hero {{users[whichItem].shortname}}">
     <img class="face" ng-src="img/{{users[whichItem].shortname}}.jpg" alt="Photo of {{users[whichItem].name}}">
-    <h1>{{users[whichItem].name}}</h1>
-    <h3>{{users[whichItem].member}}</h3>
-    <div class="bio">{{users[whichItem].bio}}</div>
+    <div class="info">
+      <h2>{{users[whichItem].name}}</h2>
+      <h3>member sice {{users[whichItem].member}}</h3>
+      <div class="bio">{{users[whichItem].bio}}</div>
+    </div>
   </header>
-  <section>
-    <ul>
-      <li ng-repeat="file in users[whichItem].files">  
-        {{file.name}}<br>
-        {{users[whichItem].name}}<br>
-        {{file.datecreated}}<br>
-        {{file.datemodify}}<br>
-        {{file.size}}<br>
-        {{file.type}}<br>
+  <section class="recap wrapper">
+    <div class="recap-l">
+      <p>
+        24 <span>FILES</span>
+      </p>
+    </div>
+    <div class="recap-r">
+      <p>
+        150 <span>FOLLOWERS</span>
+      </p>
+    </div>
+  </section>
+  <section class="list-section">
+    <header class="wrapper">
+      <div class="list-l">
+        <a href="#">add new file</a>
+      </div>
+      <div class="list-r">
+        <a href="#">x</a>
+        <a href="#">x</a>
+        <a href="#">x</a>
+        <a href="#">x</a>
+        <a href="#">x</a>
+      </div>
+    </header>
+    <ul class="list-files">
+      <li class="legend wrapper">
+        <div class="list-l">
+          Name
+        </div>
+        <div class="list-r">
+          <span>Owner</span>
+          <span>created</span>
+          <span>Modify</span>
+          <span>size</span>
+        </div>
+      </li>
+      <li ng-repeat="file in users[whichItem].files" class="file wrapper">
+        <a href="#">
+          <div class="list-l">
+            <span>{{file.type}}</span>
+            {{file.name}}
+          </div>
+          <div class="list-r">
+            <span>{{users[whichItem].name}}</span>
+            <span>{{file.datecreated}}</span>
+            <span>{{file.datemodify}}</span>
+            <span>{{file.size}}</span>
+          </div>
+        </a>
       </li>
     <ul>
     <a href="/">&laquo; Back to search</a>
   </section>
 </article>
+<p>
+</p>

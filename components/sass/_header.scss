@@ -1,0 +1,27 @@
+// _header.scss
+// =================
+
+.main-header {
+  h1 {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+    z-index: 2;
+    width: 260px;
+    height: 70px;
+    background: url('../img/logo-ultimages.svg') no-repeat;
+    text-indent: -9999px;
+    a {
+      display: block;
+      color: $green;
+      font-size: 1.8em;
+      font-weight: 400;
+      span {
+        color: $midgrey;
+      }
+    }
+  }
+  nav {
+    display: none;
+  }
+}

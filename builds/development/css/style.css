@@ -86,13 +86,26 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Elation Base", sans-serif;
   font-weight: 200;
-  font-size: 4.0em;
+}
+
+a {
+  color: #add278;
+  text-decoration: none;
+  transition: all, 0.4s, ease-out;
+}
+
+a:hover, a:focus {
+  color: #F1F1F1;
+}
+
+a:active {
+  color: #add278;
 }
 
 .wrapper {
   *zoom: 1;
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
+  padding: 0 80px;
   margin: 0 auto;
   position: relative;
 }
@@ -110,6 +123,234 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
+.main-header h1 {
+  position: absolute;
+  top: 70px;
+  left: 60px;
+  z-index: 2;
+  width: 260px;
+  height: 70px;
+  background: url("../img/logo-ultimages.svg") no-repeat;
+  text-indent: -9999px;
+}
+
+.main-header h1 a {
+  display: block;
+  color: #add278;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+
+.main-header h1 a span {
+  color: #999999;
+}
+
+.main-header nav {
+  display: none;
+}
+
 .hero {
   height: 375px;
+  background-color: #2c3e50;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero.john-doe {
+  background-image: url(../img/john-doe-bg.jpg);
+}
+
+.hero.rachel-doe {
+  background-image: url(../img/rachel-doe-bg.jpg);
+}
+
+.hero.ronald-doe {
+  background-image: url(../img/ronald-doe-bg.jpg);
+}
+
+.hero .wrapper {
+  height: 375px;
+}
+
+.hero .face {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  margin-left: -100px;
+}
+
+.hero .info {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background-color: #2c3e50;
+  padding: 20px 80px 20px 40px;
+  text-align: right;
+}
+
+.hero .info h2 {
+  font-size: 2.1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.hero .info h3 {
+  font-size: 1.8em;
+}
+
+.hero .info .bio {
+  display: none;
+}
+
+.recap {
+  height: 140px;
+  padding-top: 40px;
+}
+
+.recap .recap-l {
+  float: left;
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+.recap .recap-l span {
+  display: block;
+  font-size: 0.7em;
+}
+
+.recap .recap-r {
+  float: right;
+  font-size: 2.5em;
+  font-weight: 400;
+  text-align: right;
+}
+
+.recap .recap-r span {
+  display: block;
+  font-size: 0.7em;
+}
+
+.list-section header {
+  background-color: #add278;
+  *zoom: 1;
+}
+
+.list-section header:before, .list-section header:after {
+  content: '';
+  display: table;
+}
+
+.list-section header:after {
+  clear: both;
+}
+
+.list-section header a {
+  display: block;
+  float: left;
+  font-size: 3.0em;
+  color: #2c3e50;
+  line-height: 2.4;
+}
+
+.list-section header .list-l {
+  float: left;
+  clear: none;
+  width: 58.33333%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.list-section header .list-r {
+  float: left;
+  clear: none;
+  width: 41.66667%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.list-section header .list-r a {
+  float: left;
+  clear: none;
+  width: 20%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.list-files .list-l {
+  float: left;
+  clear: none;
+  width: 58.33333%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.list-files .list-r {
+  float: left;
+  clear: none;
+  width: 41.66667%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.list-files .list-r span {
+  float: left;
+  clear: none;
+  width: 25%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: right;
+}
+
+.list-files .legend {
+  background-color: #4a6059;
+  color: #add278;
+  *zoom: 1;
+  font-size: 2.4em;
+  font-weight: 200;
+  line-height: 2.8;
+}
+
+.list-files .legend:before, .list-files .legend:after {
+  content: '';
+  display: table;
+}
+
+.list-files .legend:after {
+  clear: both;
+}
+
+.list-files .file {
+  border-bottom: 1px solid #999999;
+  transition: all, 0.4s, ease-out;
+}
+
+.list-files .file:hover {
+  background-color: #354b60;
+}
+
+.list-files .file a {
+  color: #F1F1F1;
+  padding: 20px 0;
+  display: block;
+  *zoom: 1;
+  font-weight: 200;
+}
+
+.list-files .file a:before, .list-files .file a:after {
+  content: '';
+  display: table;
+}
+
+.list-files .file a:after {
+  clear: both;
+}
+
+.list-files .file .list-l {
+  font-size: 2.2em;
+}
+
+.list-files .file .list-r {
+  font-size: 1.8em;
 }
