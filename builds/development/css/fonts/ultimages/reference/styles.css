@@ -89,3 +89,6 @@
 .icon-map:before {
   content: "\71";
 }
+.icon-plus:before {
+  content: "\61";
+}
