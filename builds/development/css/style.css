@@ -109,3 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 .face {
   border-radius: 50%;
 }
+
+.hero {
+  height: 375px;
+}

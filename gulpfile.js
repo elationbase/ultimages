@@ -22,10 +22,8 @@ var htmlFiles = ['builds/development/*.html'],
 			'components/scripts/global.js'
 		],
 		sassFiles = ['components/sass/style.scss'],
-		htmlFiles = [
-			'builds/development/*.html',
-			'builds/development/partials/*.html'
-		],
+		htmlFiles = ['builds/development/*.html'],
+		viewFiles = ['builds/development/views/*.html'],
 		imgFiles  = ['builds/development/img/**/*.*'];
 
 
@@ -82,7 +80,17 @@ gulp.task('img', function () {
 gulp.task('html', function () {
 	gulp
 		.src(htmlFiles)
-		.pipe(gulpif(gulp.dest('builds/development/')))
+		.pipe(gulpif(env === 'production', htmlmin({collapseWhitespace: true})))
+		.pipe(gulpif(env === 'production', gulp.dest(outputDir)))
+		.pipe(connect.reload());
+});
+
+// view files
+gulp.task('views', function () {
+	gulp
+		.src(viewFiles)
+		.pipe(gulpif(env === 'production', htmlmin({collapseWhitespace: true})))
+		.pipe(gulpif(env === 'production', gulp.dest(outputDir + 'views/')))
 		.pipe(connect.reload());
 });
 
@@ -98,8 +106,9 @@ gulp.task('watch', function () {
 	gulp.watch(jsFiles, ['js']);
 	gulp.watch('components/sass/*.scss', ['sass']);
 	gulp.watch(htmlFiles, ['html']);
+	gulp.watch(htmlFiles, ['views']);
 	gulp.watch(imgFiles, ['img']);
 });
 
 
-gulp.task('default', ['js', 'sass', 'img', 'watch', 'connect']);
+gulp.task('default', ['js', 'sass', 'img', 'html', 'views', 'watch', 'connect']);
