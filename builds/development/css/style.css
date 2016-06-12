@@ -232,7 +232,7 @@ a:active {
 .main-header h1 {
   position: absolute;
   top: 70px;
-  left: 60px;
+  left: 80px;
   z-index: 2;
   width: 260px;
   height: 70px;
@@ -257,7 +257,6 @@ a:active {
 
 .main-footer {
   padding: 100px 40px;
-  margin-top: 60px;
   background-color: #354b60;
   text-align: center;
   font-size: 1.6em;
@@ -267,6 +266,131 @@ a:active {
 .main-footer img {
   max-width: 140px;
   margin-bottom: 10px;
+}
+
+.search-section {
+  min-height: 100vh;
+  background: url(../img/main-bg.jpg) bottom right;
+  background-size: cover;
+  padding-top: 200px;
+}
+
+.search-section h1 {
+  font-size: 4.0em;
+  color: #add278;
+}
+
+.search-section h2 {
+  font-size: 2.8em;
+  color: #F1F1F1;
+}
+
+.search-section .search-wrapper {
+  *zoom: 1;
+  margin-top: 20px;
+}
+
+.search-section .search-wrapper:before, .search-section .search-wrapper:after {
+  content: '';
+  display: table;
+}
+
+.search-section .search-wrapper:after {
+  clear: both;
+}
+
+.search-section input[type="search"] {
+  display: block;
+  float: left;
+  padding: 20px;
+  border: none;
+  outline: none;
+  width: 70%;
+  max-width: 500px;
+  font-size: 2.0em;
+}
+
+.userlist {
+  position: relative;
+}
+
+.userlist ul {
+  position: absolute;
+  top: 100%;
+  right: -80px;
+  left: 0;
+  padding-bottom: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: auto;
+}
+
+.userlist ul.ng-hide li {
+  margin-left: 100vh;
+}
+
+.userlist li {
+  display: inline-block;
+  margin: 20px 20px 0 0;
+  transition: all 0.5s ease-out;
+}
+
+.userlist li a {
+  display: block;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  *zoom: 1;
+  border-radius: 3px;
+}
+
+.userlist li a:before, .userlist li a:after {
+  content: '';
+  display: table;
+}
+
+.userlist li a:after {
+  clear: both;
+}
+
+.userlist li a img {
+  width: 120px;
+  float: left;
+}
+
+.userlist li a .info {
+  margin-left: 120px;
+  padding: 50px 15px 0 15px;
+}
+
+.userlist li a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.userlist li h2 {
+  font-size: 2.5em;
+  color: #F1F1F1;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.userlist li h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 400;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity: 0;
+  margin-left: 100vh;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity: 1;
+  margin-left: 0;
 }
 
 .hero {

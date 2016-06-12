@@ -9602,13 +9602,14 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
   'use strict';
   var myApp = angular.module('myApp', [
     'ngRoute',
+    'ngAnimate',
     'userControllers',
     'userDirectives'
   ]);
 
   myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
-    when('/list', {
+    when('/', {
       templateUrl: 'views/list.html',
       controller: 'ListController'
     }).
@@ -9617,10 +9618,10 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
       controller: 'UserController'
     }).
     otherwise({
-      redirectTo: '/list'
+      redirectTo: '/'
     });
   }]);
-  
+
 })(window.angular);
 
 (function(angular) {

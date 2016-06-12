@@ -2,13 +2,14 @@
   'use strict';
   var myApp = angular.module('myApp', [
     'ngRoute',
+    'ngAnimate',
     'userControllers',
     'userDirectives'
   ]);
 
   myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
-    when('/list', {
+    when('/', {
       templateUrl: 'views/list.html',
       controller: 'ListController'
     }).
@@ -17,8 +18,8 @@
       controller: 'UserController'
     }).
     otherwise({
-      redirectTo: '/list'
+      redirectTo: '/'
     });
   }]);
-  
+
 })(window.angular);
