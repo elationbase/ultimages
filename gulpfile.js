@@ -46,7 +46,7 @@ if ( env ==='development') {
 
 // JS files
 gulp.task('js', function () {
-	gulp
+	return gulp
 		.src(jsFiles)
 		.pipe(sourcemaps.init())
 		.pipe(concat('script.js'))
@@ -58,7 +58,8 @@ gulp.task('js', function () {
 
 // CSS & SASS files
 gulp.task('sass', function () {
- return gulp.src('components/sass/**/*.scss')
+ return gulp
+ 	 .src('components/sass/**/*.scss')
    .pipe(sass({
 		 outputStyle: sassStyle,
 		 image: outputDir + 'img',
@@ -70,7 +71,7 @@ gulp.task('sass', function () {
 
 // Images files
 gulp.task('img', function () {
-    gulp
+    return gulp
 		.src(imgFiles)
 		.pipe(gulpif(env === 'production', gulp.dest(outputDir+ 'img')))
 		.pipe(connect.reload())
@@ -78,7 +79,7 @@ gulp.task('img', function () {
 
 // HTML files
 gulp.task('html', function () {
-	gulp
+	return gulp
 		.src(htmlFiles)
 		.pipe(gulpif(env === 'production', htmlmin({collapseWhitespace: true})))
 		.pipe(gulpif(env === 'production', gulp.dest(outputDir)))
@@ -87,7 +88,7 @@ gulp.task('html', function () {
 
 // view files
 gulp.task('views', function () {
-	gulp
+	return gulp
 		.src(viewFiles)
 		.pipe(gulpif(env === 'production', htmlmin({collapseWhitespace: true})))
 		.pipe(gulpif(env === 'production', gulp.dest(outputDir + 'views/')))
@@ -111,4 +112,4 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['js', 'sass', 'img', 'html', 'views', 'watch', 'connect']);
+gulp.task('default', ['js', 'sass', 'img', 'watch', 'connect']);

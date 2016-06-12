@@ -1,6 +1,134 @@
+// _details.scss
+// =================
+
 .hero {
   height: 375px;
-  &.john-doe-bg {
+  background-color: $dark;
+  background-attachment: fixed;
+  position: relative;
+  &.john-doe {
+    background-image: url(../img/john-doe-bg.jpg);
+  }
+  &.rachel-doe {
+    background-image: url(../img/rachel-doe-bg.jpg);
+  }
+  &.ronald-doe {
+    background-image: url(../img/ronald-doe-bg.jpg);
+  }
+  .wrapper {
+    height: 375px;
+  }
+  .face {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    margin-left: -100px;
+  }
+  .info {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: $dark;
+    padding: 20px 80px 20px 40px;
+    text-align: right;
+    h2 {
+      font-size: 2.1em;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding-bottom: 5px;
+    }
+    h3{
+      font-size: 1.8em;
+    }
+    .bio {
+      display: none;
+    }
+  }
+}
+.recap {
+  height: 140px;
+  padding-top: 40px;
+  .recap-l {
+    float: left;
+    font-size: 2.5em;
+    font-weight: 400;
+    span {
+      display: block;
+      font-size: 0.7em;
+    }
+  }
+  .recap-r {
+    float: right;
+    font-size: 2.5em;
+    font-weight: 400;
+    text-align: right;
+    span {
+      display: block;
+      font-size: 0.7em;
+    }
+  }
+}
 
+.list-section {
+  header {
+    background-color: $green;
+    @include j-cf();
+    a {
+      display: block;
+      float: left;
+      font-size: 3.0em;
+      color: $dark;
+      line-height: 2.4;
+    }
+    .list-l {
+      @include j-span (7/12);
+    }
+    .list-r {
+      @include j-span (5/12);
+      a {
+        @include j-span (1/5);
+        text-align: center;
+      }
+    }
+  }
+}
+.list-files {
+  .list-l {
+    @include j-span (7/12);
+  }
+  .list-r {
+    @include j-span (5/12);
+    span {
+      @include j-span (1/4);
+      text-align: right;
+    }
+  }
+  .legend {
+    background-color: $darkgreen;
+    color: $green;
+    @include j-cf();
+    font-size: 2.4em;
+    font-weight: 200;
+    line-height: 2.8;
+  }
+  .file {
+    border-bottom: 1px solid $midgrey;
+    transition: (all, 0.4s, ease-out);
+    &:hover {
+      background-color: lighten($dark, 5%);
+    }
+    a {
+      color: $light;
+      padding: 20px 0;
+      display: block;
+      @include j-cf();
+      font-weight: 200;
+    }
+    .list-l {
+      font-size: 2.2em;
+    }
+    .list-r {
+      font-size: 1.8em;
+    }
   }
 }
