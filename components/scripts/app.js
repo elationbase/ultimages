@@ -1,19 +1,25 @@
-var myApp = angular.module('myApp', [
-  'ngRoute',
-  'userControllers'
-]);
+(function(angular) {
+  'use strict';
+  var myApp = angular.module('myApp', [
+    'ngRoute',
+    'ngAnimate',
+    'userControllers',
+    'userDirectives'
+  ]);
 
-myApp.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-  when('/list', {
-    templateUrl: 'views/list.html',
-    controller: 'ListController'
-  }).
-  when('/details/:itemId', {
-    templateUrl: 'views/details.html',
-    controller: 'DetailsController'
-  }).
-  otherwise({
-    redirectTo: '/list'
-  });
-}]);
+  myApp.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.
+    when('/', {
+      templateUrl: 'views/list.html',
+      controller: 'ListController'
+    }).
+    when('/user/:itemId', {
+      templateUrl: 'views/user.html',
+      controller: 'UserController'
+    }).
+    otherwise({
+      redirectTo: '/'
+    });
+  }]);
+
+})(window.angular);

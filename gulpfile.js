@@ -19,6 +19,7 @@ var htmlFiles = ['builds/development/*.html'],
 			'components/scripts/libs/angular/angular-animate.min.js',
 			'components/scripts/app.js',
 			'components/scripts/controllers.js',
+			'components/scripts/directives.js',
 			'components/scripts/global.js'
 		],
 		sassFiles = ['components/sass/style.scss'],
@@ -71,7 +72,7 @@ gulp.task('sass', function () {
 
 // Images files
 gulp.task('img', function () {
-    return gulp
+  return gulp
 		.src(imgFiles)
 		.pipe(gulpif(env === 'production', gulp.dest(outputDir+ 'img')))
 		.pipe(connect.reload())
@@ -107,7 +108,7 @@ gulp.task('watch', function () {
 	gulp.watch(jsFiles, ['js']);
 	gulp.watch('components/sass/*.scss', ['sass']);
 	gulp.watch(htmlFiles, ['html']);
-	gulp.watch(htmlFiles, ['views']);
+	gulp.watch(viewFiles, ['views']);
 	gulp.watch(imgFiles, ['img']);
 });
 

@@ -11,25 +11,27 @@
     <div class="recap-l">
       <p>
         24 <span>FILES</span>
+        <span class="icon icon-photo"></span>
       </p>
     </div>
     <div class="recap-r">
       <p>
         150 <span>FOLLOWERS</span>
+        <span class="icon icon-cloud"></span>
       </p>
     </div>
   </section>
   <section class="list-section">
     <header class="wrapper">
       <div class="list-l">
-        <a href="#">add new file</a>
+        <a href="#" class="add-new"><span class="icon-plus"></span>add new file</a>
       </div>
-      <div class="list-r">
-        <a href="#">x</a>
-        <a href="#">x</a>
-        <a href="#">x</a>
-        <a href="#">x</a>
-        <a href="#">x</a>
+      <nav class="list-r">
+        <li><a href="#" class="icon icon-delete"></a></li>
+        <li><a href="#" class="icon icon-edit"></a></li>
+        <li><a href="#" class="icon icon-lock"></a></li>
+        <li><a href="#" class="icon icon-love"></a></li>
+        <li><a href="#" class="icon icon-more"></a></li>
       </div>
     </header>
     <ul class="list-files">
@@ -47,8 +49,12 @@
       <li ng-repeat="file in users[whichItem].files" class="file wrapper">
         <a href="#">
           <div class="list-l">
-            <span>{{file.type}}</span>
-            {{file.name}}
+            <span class="file-type">
+              {{file.type}}
+            </span>
+            <p class="file-name">
+              {{file.name}}
+            </p>
           </div>
           <div class="list-r">
             <span>{{users[whichItem].name}}</span>
@@ -60,7 +66,6 @@
       </li>
     <ul>
     <a href="/">&laquo; Back to search</a>
+    <div test-directive></div>
   </section>
 </article>
-<p>
-</p>

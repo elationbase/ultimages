@@ -46,15 +46,21 @@
   }
 }
 .recap {
-  height: 140px;
-  padding-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  @include j-cf();
   .recap-l {
     float: left;
     font-size: 2.5em;
     font-weight: 400;
     span {
       display: block;
-      font-size: 0.7em;
+      font-size: 0.6em;
+      color: $midgrey;
+    }
+    .icon {
+      color: $green;
+      font-size: 2.0em;
     }
   }
   .recap-r {
@@ -64,7 +70,12 @@
     text-align: right;
     span {
       display: block;
-      font-size: 0.7em;
+      font-size: 0.6em;
+      color: $midgrey;
+    }
+    .icon {
+      color: $green;
+      font-size: 2.0em;
     }
   }
 }
@@ -76,18 +87,49 @@
     a {
       display: block;
       float: left;
-      font-size: 3.0em;
       color: $dark;
       line-height: 2.4;
+      &.add-new {
+        font-size: 2.0em;
+        margin: 10px 0;
+        padding: 0 20px;
+        border: 1px solid $dark;
+        border-radius: 3px;
+        span {
+          padding-right: 10px;
+          font-size: 1.4em;
+          line-height: 1;
+          vertical-align: -8px;
+        }
+        &:hover {
+          background-color: $darkgreen;
+          color: $light;
+        }
+      }
+      &.icon {
+        font-size: 3.0em;
+      }
     }
     .list-l {
       @include j-span (7/12);
     }
     .list-r {
       @include j-span (5/12);
-      a {
+      li {
         @include j-span (1/5);
-        text-align: center;
+        text-align: right;
+        list-style: none;
+        a {
+          padding: 0 25px;
+          float: right;
+          &:hover {
+            background-color: $darkgreen;
+            color: $light;
+          }
+          &:before {
+            vertical-align: -6px;
+          }
+        }
       }
     }
   }
@@ -113,10 +155,7 @@
   }
   .file {
     border-bottom: 1px solid $midgrey;
-    transition: (all, 0.4s, ease-out);
-    &:hover {
-      background-color: lighten($dark, 5%);
-    }
+    transition: all, 0.4s, ease-out;
     a {
       color: $light;
       padding: 20px 0;
@@ -129,6 +168,33 @@
     }
     .list-r {
       font-size: 1.8em;
+    }
+    .file-type {
+      border: 1px solid $green;
+      border-radius: 50%;
+      font-size: 0.7em;
+      font-weight: 400;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      position: absolute;
+      top: 11px;
+      transform: scale(0.8);
+      transition: all, 0.4s, ease-out;
+    }
+    .file-name {
+      padding-left: 60px;
+    }
+    &:hover {
+      background-color: lighten($dark, 5%);
+      .file-type {
+        top: 11px;
+        transform: scale(1);
+        background-color: $green;
+        color: $dark;
+      }
     }
   }
 }

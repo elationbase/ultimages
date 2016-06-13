@@ -1,0 +1,124 @@
+.search-section {
+  min-height: 100vh;
+  background: url(../img/main-bg.jpg) bottom right;
+  background-size: cover;
+  padding-top: 200px;
+  h1 {
+    font-size: 4.0em;
+    color: $green;
+  }
+  h2 {
+    font-size: 2.8em;
+    color: $light;
+  }
+  .search-wrapper {
+    @include j-cf();
+    margin-top: 20px;
+  }
+  input[type="search"] {
+    display: block;
+    float: left;
+    padding: 20px;
+    border: none;
+    outline: none;
+    width: 70%;
+    max-width: 500px;
+    font-size: 2.0em;
+    border-radius: 4px 0 0 4px;
+    background-color: darken($light, 5%);
+    transition: all, 0.4s, ease;
+    &:hover {
+      background-color: $light;
+    }
+    &:focus {
+      background-color: #fff;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+    }
+  }
+  .select {
+    label {
+      cursor: pointer;
+      position: relative;
+    }
+    input[type="radio"]  {
+      visibility: hidden;
+      position: absolute;
+      left: -26px;
+      top: -3px;
+      &:checked:after {
+        font-family: 'ultimages';
+        content: "\63";
+        font-size: 2.0em;
+        visibility: visible;
+        float: left;
+        opacity: 1;
+      }
+    }
+  }
+}
+.userlist {
+  position: relative;
+  ul {
+    position: absolute;
+    top: 100%;
+    right: -$pad;
+    left: 0;
+    padding-bottom: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: auto;
+    &.ng-hide {
+      li {
+        margin-left: 100vh;
+      }
+    }
+  }
+  li {
+    display: inline-block;
+    margin: 20px 20px 0 0;
+    transition: all 0.5s ease-out;
+    a {
+      display: block;
+      padding: 15px;
+      background-color: rgba(255,255,255,0.5);
+      @include j-cf();
+      border-radius: 3px;
+      img {
+        width: 120px;
+        float: left;
+      }
+      .info {
+        margin-left: 120px;
+        padding: 50px 15px 0 15px;
+      }
+      &:hover {
+        background-color: rgba(255,255,255,0.7);;
+      }
+    }
+    h2 {
+      font-size: 2.5em;
+      color: $light;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    h3 {
+      font-size: 18px;
+      color: $dark;
+      font-weight: 400;
+    }
+  }
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  margin-left: 100vh;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  margin-left: 0;
+}
