@@ -69,3 +69,35 @@
     }
   }
 }
+
+// Page transition
+.page {
+  opacity: 1;
+}
+
+.page.ng-leave 	{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  animation: scaleOut 0.8s both ease-out;
+ }
+.page.ng-enter 	{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  animation: scaleIn 0.5s 0.3s both ease-out;
+ }
+ @keyframes scaleOut {
+ 	from 		{ opacity: 1; transform: scale(1); }
+  to 		{ opacity: 0.5; transform: scale(0.8); }
+ }
+
+@keyframes scaleIn {
+  to 		{ opacity: 1; transform: scale(1); }
+	from 		{ opacity: 0.01; transform: scale(1.2); }
+}

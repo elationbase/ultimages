@@ -8,16 +8,16 @@
   ]);
 
   myApp.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.
-    when('/', {
+    $routeProvider
+    .when('/', {
       templateUrl: 'views/list.html',
       controller: 'ListController'
-    }).
-    when('/user/:itemId', {
+    })
+    .when('/user/:itemId', {
       templateUrl: 'views/user.html',
       controller: 'UserController'
-    }).
-    otherwise({
+    })
+    .otherwise({
       redirectTo: '/'
     });
   }]);

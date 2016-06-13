@@ -7,6 +7,7 @@
       $scope.users = data;
       $scope.userOrder = 'name';
     });
+    $scope.pageClass = 'page-list';
   }])
 
   .controller('UserController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
@@ -14,6 +15,7 @@
       $scope.users = data;
       $scope.whichItem = $routeParams.itemId;
     });
+    $scope.pageClass = 'page-user';
   }])
 
 })(window.angular);
