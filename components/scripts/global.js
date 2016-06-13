@@ -34,6 +34,17 @@
 
 		$(window).on('scroll', addStick);
 
+
+		$('main').on('click', '.file a', function(event) {
+			event.preventDefault();
+			if ($(this).parent('li').hasClass('is-active')) {
+				$('.file').removeClass('is-active');
+			} else {
+				$('.file').removeClass('is-active');
+				$(this).parent('li').addClass('is-active');
+			}
+		});
+
 	});
 
 

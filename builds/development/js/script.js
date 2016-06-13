@@ -9703,6 +9703,33 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
       }
     );
 
+    userDirectives.directive( "modalImage",
+      function() {
+        return({
+          link: link,
+          restrict: "A",
+          templateUrl: 'views/user-directives/modal-image.html'
+        });
+        function link( scope, element, attributes ) {
+          var numRand = Math.floor(Math.random() * 20);
+          $('#modal-image .modal-content').html('<img src="img/artist/' + numRand + '.jpg" alt="" />');
+          $('main').on('click', '.file a', function(event, element) {
+      			event.preventDefault();
+            numRand = Math.floor(Math.random() * 20);
+            $('#modal-image .modal-content').html('<img src="img/artist/' + numRand + '.jpg" alt="" />');
+      		});
+
+          element.on("click", '.button', function(event) {
+            event.preventDefault();
+            $('.modal').removeClass('modal-visible');
+            setTimeout(function(){
+                $('.modal').removeClass('modal-active');
+            }, 500);
+          });
+        }
+      }
+    );
+
     userDirectives.directive( "modalAdd",
       function() {
         return({
@@ -9949,6 +9976,17 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
 		};
 
 		$(window).on('scroll', addStick);
+
+
+		$('main').on('click', '.file a', function(event) {
+			event.preventDefault();
+			if ($(this).parent('li').hasClass('is-active')) {
+				$('.file').removeClass('is-active');
+			} else {
+				$('.file').removeClass('is-active');
+				$(this).parent('li').addClass('is-active');
+			}
+		});
 
 	});
 

@@ -54,6 +54,33 @@
       }
     );
 
+    userDirectives.directive( "modalImage",
+      function() {
+        return({
+          link: link,
+          restrict: "A",
+          templateUrl: 'views/user-directives/modal-image.html'
+        });
+        function link( scope, element, attributes ) {
+          var numRand = Math.floor(Math.random() * 20);
+          $('#modal-image .modal-content').html('<img src="img/artist/' + numRand + '.jpg" alt="" />');
+          $('main').on('click', '.file a', function(event, element) {
+      			event.preventDefault();
+            numRand = Math.floor(Math.random() * 20);
+            $('#modal-image .modal-content').html('<img src="img/artist/' + numRand + '.jpg" alt="" />');
+      		});
+
+          element.on("click", '.button', function(event) {
+            event.preventDefault();
+            $('.modal').removeClass('modal-visible');
+            setTimeout(function(){
+                $('.modal').removeClass('modal-active');
+            }, 500);
+          });
+        }
+      }
+    );
+
     userDirectives.directive( "modalAdd",
       function() {
         return({

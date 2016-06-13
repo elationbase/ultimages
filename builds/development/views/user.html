@@ -1,6 +1,6 @@
 <article ng-model="users" class="users">
   <header class="hero {{users[whichItem].shortname}}">
-    <img class="face" ng-src="img/{{users[whichItem].shortname}}.jpg" alt="Photo of {{users[whichItem].name}}">
+    <img class="face" ng-src="img/{{users[whichItem].shortname}}.jpg">
     <div class="info">
       <h2>{{users[whichItem].name}}</h2>
       <h3>member sice {{users[whichItem].member}}</h3>
@@ -51,7 +51,7 @@
         </div>
       </li>
       <li ng-repeat="file in users[whichItem].files" class="file wrapper">
-        <a href="#">
+        <a href="#" data-modal-target="modal-image">
           <div class="list-l">
             <span class="file-type">
               {{file.type}}
@@ -69,9 +69,8 @@
         </a>
       </li>
     <ul>
-    <a href="/">&laquo; Back to search</a>
-    <div test-directive></div>
   </section>
   <div modal-delete></div>
   <div modal-add></div>
+  <div modal-image></div>
 </article>

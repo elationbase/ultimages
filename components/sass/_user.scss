@@ -25,6 +25,7 @@ article.users {
     bottom: -100px;
     left: 50%;
     margin-left: -100px;
+    animation: scaleFace 0.5s 0.3s both ease-out;
     @include media (mobile){
       width: 160px;
       bottom: -75px;
@@ -97,6 +98,7 @@ article.users {
 }
 
 .list-section {
+  margin-bottom: 80px;
   header {
     background-color: $green;
     @include j-cf();
@@ -278,6 +280,15 @@ article.users {
   .file {
     border-bottom: 1px solid $midgrey;
     transition: all, 0.4s, ease-out;
+    &.is-active {
+      background-color: $darkgreen;
+      &:hover {
+        background-color: $darkgreen;
+      }
+      a {
+        color: $light;
+      }
+    }
     a {
       color: $light;
       padding: 20px 0;
@@ -331,4 +342,9 @@ article.users {
       }
     }
   }
+}
+
+@keyframes scaleFace {
+ from 		{ opacity: 0; transform: scale(0.5); }
+ to 		{ opacity: 1; transform: scale(1); }
 }

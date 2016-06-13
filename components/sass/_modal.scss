@@ -22,6 +22,10 @@
     transition: opacify, 0.5s, ease-out;
     transition: visibility, 0s, ease-out;
     min-width: 500px;
+    @include media (mobile){
+      min-width: 300px;
+      max-width: 95%;
+    };
   }
   .modal-body {
     max-width: 100%;
