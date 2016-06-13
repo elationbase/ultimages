@@ -19,5 +19,20 @@
       };
     });
 
+    userDirectives.directive( "selectBox",
+      function() {
+        return({
+          link: link,
+          restrict: "A",
+          template: '<li><span>by</span>name<span class="icon-menu"></span><ul><li><a>ascending</a></li><li><a>descending<a></li></ul></li>'
+        });
+        function link( scope, element, attributes ) {
+          $(element).on("click", function handleClickEvent( event ) {
+            event.preventDefault();
+            $(this).fadeOut();
+          });
+        }
+      }
+    );
 
 })(window.angular);

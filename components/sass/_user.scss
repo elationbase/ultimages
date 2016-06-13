@@ -155,7 +155,7 @@
   }
   .file {
     border-bottom: 1px solid $midgrey;
-    transition: (all, 0.4s, ease-out);
+    transition: all, 0.4s, ease-out;
     a {
       color: $light;
       padding: 20px 0;
@@ -182,7 +182,7 @@
       position: absolute;
       top: 11px;
       transform: scale(0.8);
-      transition: (all, 0.4s, ease-out);
+      transition: all, 0.4s, ease-out;
     }
     .file-name {
       padding-left: 60px;

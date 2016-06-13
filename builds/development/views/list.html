@@ -3,29 +3,29 @@
     <h1>A complete library of photography </h1>
     <h2>search for a user</h2>
     <div class="search-wrapper">
-      <input type="search" ng-model="query" placeholder="Search for users" autofocus>
-      <select ng-model="userOrder">
-        <option value="name">Name</option>
-        <option value="since">latest</option>
-      </select>
+      <input type="search" ng-model="query" placeholder="Name" autofocus>
+
       <ul class="select">
         <li>
+          order
           <span>by</span>
-          name
-           <ul>
-             <li>ascending</li>
-             <li>descending</li>
-           </ul>
+          <span class="icon-arrow-down"></span>
+          <ul>
+            <li>
+              <label>
+                <input type="radio" ng-model="direction" name="direction" checked>
+                ascending
+               </label>
+            </li>
+            <li>
+              <label >
+                <input type="radio" ng-model="direction" name="direction" value="reverse">
+                descending
+              </label>
+            </li>
+          </ul>
         </li>
       </ul>
-      <label class="formgroup">
-        <input type="radio" ng-model="direction" name="direction" checked>
-        ascending
-       </label>
-      <label class="formgroup">
-        <input type="radio" ng-model="direction" name="direction" value="reverse">
-        descending
-      </label>
     </div>
     <div class="userlist">
       <ul ng-show="query">

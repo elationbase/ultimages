@@ -9665,6 +9665,21 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
       };
     });
 
+    userDirectives.directive( "selectBox",
+      function() {
+        return({
+          link: link,
+          restrict: "A",
+          template: '<li><span>by</span>name<span class="icon-menu"></span><ul><li><a>ascending</a></li><li><a>descending<a></li></ul></li>'
+        });
+        function link( scope, element, attributes ) {
+          $(element).on("click", function handleClickEvent( event ) {
+            event.preventDefault();
+            $(this).fadeOut();
+          });
+        }
+      }
+    );
 
 })(window.angular);
 
@@ -9674,22 +9689,22 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
 	/* trigger when page is ready */
 	$(document).ready(function (){
 	
-		// your functions go here
-	
+
 	});
-	
-	
+
+
 	/* optional triggers
-	
+
 	$(window).load(function() {
-		
+
 	});
-	
+
 	$(window).resize(function() {
-		
+
 	});
-	
+
 	*/
 
 })(window.jQuery);
+
 //# sourceMappingURL=script.js.map
