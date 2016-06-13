@@ -33,16 +33,16 @@ a {
 }
 
 .button {
-  background-color: $dark;
-  color: $light;
+  background-color: $green;
+  color: $dark;
   font-size: 1.6em;
-  font-weight: 200;
+  font-weight: 400;
   padding: 15px 30px;
   border-radius: 3px;
   display: inline-block;
   margin: 5px;
   &:hover, &:focus {
-    background-color: lighten($dark, 10%);
+    background-color: darken($green, 20%);
     color: $light;
   }
   &:active {
@@ -52,8 +52,24 @@ a {
     background-color: darken($light, 30%);
     color: $dark;
     &:hover, &:focus {
-      background-color: darken($light, 50%);
+      background-color: darken($light, 40%);
       color: $light;
     }
+  }
+  &-dark {
+    background-color: $dark;
+    color: $light;
+    &:hover, &:focus {
+      background-color: lighten($dark, 20%);
+      color: $light;
+    }
+  }
+}
+
+#modal-delete .modal-content {
+  text-align: center;
+  p {
+    margin-top: -40px;
+    padding-bottom: 20px;
   }
 }

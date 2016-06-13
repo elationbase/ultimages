@@ -27,7 +27,7 @@
     max-width: 100%;
     max-height: 100%;
     margin: auto;
-    background-color: white;
+    background-color: $dark;
     border-radius: 3px;
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
     overflow: auto;
@@ -40,12 +40,11 @@
     font-size: 1.8em;
   }
   header {
-    background-color: white;
+    background-color: $dark;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
-    font-size: 2.4em;
     h2 {
       width: 100%;
       margin: 0 0 -10px 0;
@@ -55,27 +54,30 @@
       overflow: hidden;
       white-space: nowrap;
       color: $light;
+      font-size: 2.4em;
+      line-height: 1.8em;
+      font-weight: 400;
     }
     .modal-close {
       position: absolute;
       z-index: 903;
-      top: 10px;
+      top: 0;
       right: 10px;
-      width: 30px;
-      height: 30px;
-      text-align: center;
-      background-size: 20px;
+      font-size: 4em;
+      transform: rotate(45deg) scale(0.7);
+      color: $light;
       &:hover {
-        text-decoration: none;
+        transform: rotate(135deg) scale(1);
+        top: -3px;
       }
     }
   }
-  .modal-pad {
-    padding: 10px;
+  .modal-pad  {
+    padding: 50px;
   }
   &.modal-lg {
     .modal-body {
-      max-width: 90%;
+      min-width: 90%;
     }
   }
   &.modal-sm {
