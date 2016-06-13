@@ -20,6 +20,7 @@ var htmlFiles = ['builds/development/*.html'],
 			'components/scripts/app.js',
 			'components/scripts/controllers.js',
 			'components/scripts/directives.js',
+			'components/scripts/modules/modal.js',
 			'components/scripts/global.js'
 		],
 		sassFiles = ['components/sass/style.scss'],
