@@ -508,9 +508,22 @@ main {
   color: #add278;
 }
 
+@media only screen and (max-width: 767px) {
+  .search-section h1 {
+    text-align: center;
+  }
+}
+
 .search-section h2 {
   font-size: 2.8em;
   color: #F1F1F1;
+}
+
+@media only screen and (max-width: 767px) {
+  .search-section h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 
 .search-section .search-wrapper {
@@ -525,6 +538,12 @@ main {
 
 .search-section .search-wrapper:after {
   clear: both;
+}
+
+@media only screen and (max-width: 767px) {
+  .search-section .search-wrapper {
+    text-align: center;
+  }
 }
 
 .search-section input[type="search"] {
@@ -550,6 +569,15 @@ main {
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
+@media only screen and (max-width: 767px) {
+  .search-section input[type="search"] {
+    width: 100%;
+    border-radius: 4px;
+    float: none;
+    display: inline-block;
+  }
+}
+
 .search-section .select label {
   cursor: pointer;
   position: relative;
@@ -569,6 +597,12 @@ main {
   visibility: visible;
   float: left;
   opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .search-section .select {
+    display: none;
+  }
 }
 
 .userlist {
@@ -619,12 +653,20 @@ main {
   transition: all 0.5s ease-out;
 }
 
+@media only screen and (max-width: 767px) {
+  .userlist li {
+    display: block;
+    text-align: center;
+  }
+}
+
 .userlist li a {
   display: block;
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.5);
   *zoom: 1;
   border-radius: 3px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .userlist li a:before, .userlist li a:after {
@@ -636,14 +678,35 @@ main {
   clear: both;
 }
 
+@media only screen and (max-width: 767px) {
+  .userlist li a {
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
 .userlist li a img {
   width: 120px;
   float: left;
 }
 
+@media only screen and (max-width: 767px) {
+  .userlist li a img {
+    width: 100px;
+  }
+}
+
 .userlist li a .info {
   margin-left: 120px;
   padding: 50px 15px 0 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  .userlist li a .info {
+    margin-left: 100px;
+    padding-top: 10px;
+  }
 }
 
 .userlist li a:hover {
@@ -655,12 +718,14 @@ main {
   color: #F1F1F1;
   text-transform: uppercase;
   font-weight: 400;
+  text-align: left;
 }
 
 .userlist li h3 {
   font-size: 18px;
   color: #2c3e50;
   font-weight: 400;
+  text-align: left;
 }
 
 .animate-repeat.ng-leave.ng-leave-active,
