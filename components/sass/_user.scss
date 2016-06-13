@@ -84,6 +84,24 @@
   header {
     background-color: $green;
     @include j-cf();
+    &.js-stick-on {
+      height: 72px;
+      .stick {
+        background-color: $green;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 6;
+        padding: 0 $pad;
+        a {
+          line-height: 1.7;
+          &.add-new {
+            margin: 6px 0;
+          }
+        }
+      }
+    }
     a {
       display: block;
       float: left;
@@ -151,7 +169,23 @@
     @include j-cf();
     font-size: 2.4em;
     font-weight: 200;
-    line-height: 2.8;
+    line-height: 2.8em;
+    transition: all 0.8s ease-out;
+    height: 67px;
+    &.js-stick-on {
+      line-height: 1.6em;
+      background-color: transparent;
+      .stick {
+        background-color: $darkgreen;
+        position: fixed;
+        top: 51px;
+        right: 0;
+        left: 0;
+        z-index: 5;
+        padding: 0 $pad;
+        line-height: 1.6em;
+      }
+    }
   }
   .file {
     border-bottom: 1px solid $midgrey;

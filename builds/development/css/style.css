@@ -670,6 +670,28 @@ a:active {
   clear: both;
 }
 
+.list-section header.js-stick-on {
+  height: 72px;
+}
+
+.list-section header.js-stick-on .stick {
+  background-color: #add278;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 6;
+  padding: 0 80px;
+}
+
+.list-section header.js-stick-on .stick a {
+  line-height: 1.7;
+}
+
+.list-section header.js-stick-on .stick a.add-new {
+  margin: 6px 0;
+}
+
 .list-section header a {
   display: block;
   float: left;
@@ -772,7 +794,9 @@ a:active {
   *zoom: 1;
   font-size: 2.4em;
   font-weight: 200;
-  line-height: 2.8;
+  line-height: 2.8em;
+  transition: all 0.8s ease-out;
+  height: 67px;
 }
 
 .list-files .legend:before, .list-files .legend:after {
@@ -782,6 +806,22 @@ a:active {
 
 .list-files .legend:after {
   clear: both;
+}
+
+.list-files .legend.js-stick-on {
+  line-height: 1.6em;
+  background-color: transparent;
+}
+
+.list-files .legend.js-stick-on .stick {
+  background-color: #4a6059;
+  position: fixed;
+  top: 51px;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  padding: 0 80px;
+  line-height: 1.6em;
 }
 
 .list-files .file {
