@@ -61,7 +61,18 @@
   ul {
     position: absolute;
     top: 100%;
-    right: -$pad;
+    @include media(mobile) {
+      right: -20px;
+    };
+    @include media(tablet) {
+      right: -40px;
+    };
+    @include media(laptop) {
+      right: -70px;
+    };
+    @include media(desktop) {
+      right: -100px;
+    };
     left: 0;
     padding-bottom: 15px;
     overflow-x: auto;

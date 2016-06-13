@@ -191,6 +191,7 @@ body {
   font-size: 10px;
   background: #2c3e50;
   color: #F1F1F1;
+  min-width: 400px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -216,7 +217,6 @@ a:active {
 .wrapper {
   *zoom: 1;
   width: 100%;
-  padding: 0 80px;
   margin: 0 auto;
   position: relative;
 }
@@ -228,6 +228,30 @@ a:active {
 
 .wrapper:after {
   clear: both;
+}
+
+@media only screen and (max-width: 767px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .wrapper {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .wrapper {
+    padding: 0 70px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .wrapper {
+    padding: 0 100px;
+  }
 }
 
 .button {
@@ -355,26 +379,75 @@ a:active {
   color: #2c3e50;
 }
 
+.slide-animate.ng-enter, .slide-animate.ng-leave {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s;
+}
+
+.slide-animate.ng-enter.ng-enter-active {
+  opacity: 0;
+}
+
+.slide-animate.ng-enter {
+  opacity: 1;
+}
+
+.slide-animate.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.slide-animate.ng-leave {
+  opacity: 1;
+}
+
 .main-header h1 {
   position: absolute;
   top: 70px;
-  left: 80px;
   z-index: 2;
   width: 260px;
   height: 70px;
-  background: url("../img/logo-ultimages.svg") no-repeat;
   text-indent: -9999px;
 }
 
 .main-header h1 a {
   display: block;
+  height: 70px;
   color: #add278;
   font-size: 1.8em;
   font-weight: 400;
+  background: url("../img/logo-ultimages.svg") center no-repeat;
 }
 
 .main-header h1 a span {
   color: #999999;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-header h1 {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  .main-header h1 a {
+    background-size: 200px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .main-header h1 {
+    left: 40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .main-header h1 {
+    left: 70px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .main-header h1 {
+    left: 100px;
+  }
 }
 
 .main-header nav {
@@ -476,12 +549,35 @@ a:active {
 .userlist ul {
   position: absolute;
   top: 100%;
-  right: -80px;
   left: 0;
   padding-bottom: 15px;
   overflow-x: auto;
   white-space: nowrap;
   margin: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .userlist ul {
+    right: -20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .userlist ul {
+    right: -40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .userlist ul {
+    right: -70px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .userlist ul {
+    right: -100px;
+  }
 }
 
 .userlist ul.ng-hide li {
@@ -582,6 +678,14 @@ a:active {
   margin-left: -100px;
 }
 
+@media only screen and (max-width: 767px) {
+  .hero .face {
+    width: 160px;
+    bottom: -75px;
+    margin-left: -75px;
+  }
+}
+
 .hero .info {
   position: absolute;
   top: 70px;
@@ -589,6 +693,21 @@ a:active {
   background-color: #2c3e50;
   padding: 20px 80px 20px 40px;
   text-align: right;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero .info {
+    padding: 20px 60px 20px 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .hero .info {
+    text-align: center;
+    width: 100%;
+    top: 160px;
+    padding: 20px 40px 20px 40px;
+  }
 }
 
 .hero .info h2 {
@@ -681,7 +800,30 @@ a:active {
   right: 0;
   left: 0;
   z-index: 6;
-  padding: 0 80px;
+}
+
+@media only screen and (max-width: 767px) {
+  .list-section header.js-stick-on .stick {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .list-section header.js-stick-on .stick {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .list-section header.js-stick-on .stick {
+    padding: 0 70px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .list-section header.js-stick-on .stick {
+    padding: 0 100px;
+  }
 }
 
 .list-section header.js-stick-on .stick a {
@@ -689,7 +831,7 @@ a:active {
 }
 
 .list-section header.js-stick-on .stick a.add-new {
-  margin: 6px 0;
+  margin: 5px 0;
 }
 
 .list-section header a {
@@ -705,6 +847,15 @@ a:active {
   padding: 0 20px;
   border: 1px solid #2c3e50;
   border-radius: 3px;
+}
+
+@media only screen and (max-width: 767px) {
+  .list-section header a.add-new {
+    padding: 0 10px;
+  }
+  .list-section header a.add-new .icon-plus {
+    display: none;
+  }
 }
 
 .list-section header a.add-new span {
@@ -723,6 +874,15 @@ a:active {
   font-size: 3.0em;
 }
 
+@media only screen and (max-width: 767px) {
+  .list-section header a.icon {
+    padding: 0 10px;
+  }
+  .list-section header a.icon-love {
+    display: none;
+  }
+}
+
 .list-section header .list-l {
   float: left;
   clear: none;
@@ -731,12 +891,54 @@ a:active {
   margin-right: 0;
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .list-section header .list-l {
+    float: left;
+    clear: none;
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .list-section header .list-l {
+    float: left;
+    clear: none;
+    width: 37.5%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .list-section header .list-r {
   float: left;
   clear: none;
   width: 41.66667%;
   margin-left: 0;
   margin-right: 0;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .list-section header .list-r {
+    float: left;
+    clear: none;
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .list-section header .list-r {
+    float: left;
+    clear: none;
+    width: 62.5%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    right: -20px;
+  }
 }
 
 .list-section header .list-r li {
@@ -749,9 +951,25 @@ a:active {
   list-style: none;
 }
 
+@media only screen and (max-width: 767px) {
+  .list-section header .list-r li {
+    float: left;
+    clear: none;
+    width: 25%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .list-section header .list-r li a {
   padding: 0 25px;
   float: right;
+}
+
+@media only screen and (max-width: 767px) {
+  .list-section header .list-r li a {
+    padding: 0 15px;
+  }
 }
 
 .list-section header .list-r li a:hover {
@@ -771,12 +989,52 @@ a:active {
   margin-right: 0;
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .list-files .list-l {
+    float: left;
+    clear: none;
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .list-files .list-l {
+    float: left;
+    clear: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .list-files .list-r {
   float: left;
   clear: none;
   width: 41.66667%;
   margin-left: 0;
   margin-right: 0;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .list-files .list-r {
+    float: left;
+    clear: none;
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .list-files .list-r {
+    float: left;
+    clear: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .list-files .list-r span {
@@ -786,6 +1044,9 @@ a:active {
   margin-left: 0;
   margin-right: 0;
   text-align: right;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .list-files .legend {
@@ -808,6 +1069,12 @@ a:active {
   clear: both;
 }
 
+@media only screen and (max-width: 767px) {
+  .list-files .legend {
+    display: none;
+  }
+}
+
 .list-files .legend.js-stick-on {
   line-height: 1.6em;
   background-color: transparent;
@@ -820,8 +1087,31 @@ a:active {
   right: 0;
   left: 0;
   z-index: 5;
-  padding: 0 80px;
   line-height: 1.6em;
+}
+
+@media only screen and (max-width: 767px) {
+  .list-files .legend.js-stick-on .stick {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .list-files .legend.js-stick-on .stick {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .list-files .legend.js-stick-on .stick {
+    padding: 0 70px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .list-files .legend.js-stick-on .stick {
+    padding: 0 100px;
+  }
 }
 
 .list-files .file {
@@ -854,6 +1144,17 @@ a:active {
   font-size: 1.8em;
 }
 
+@media only screen and (max-width: 767px) {
+  .list-files .file .list-r {
+    margin-top: 20px;
+    background: #233140;
+    line-height: 1.5em;
+  }
+  .list-files .file .list-r span {
+    text-align: center;
+  }
+}
+
 .list-files .file .file-type {
   border: 1px solid #add278;
   border-radius: 50%;
@@ -872,6 +1173,10 @@ a:active {
 
 .list-files .file .file-name {
   padding-left: 60px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .list-files .file:hover {

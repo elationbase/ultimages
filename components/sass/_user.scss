@@ -23,6 +23,11 @@
     bottom: -100px;
     left: 50%;
     margin-left: -100px;
+    @include media (mobile){
+      width: 160px;
+      bottom: -75px;
+      margin-left: -75px;
+    };
   }
   .info {
     position: absolute;
@@ -31,6 +36,15 @@
     background-color: $dark;
     padding: 20px 80px 20px 40px;
     text-align: right;
+    @include media (tablet){
+      padding: 20px 60px 20px 40px;
+    };
+    @include media (mobile){
+      text-align: center;
+      width: 100%;
+      top: 160px;
+      padding: 20px 40px 20px 40px;
+    };
     h2 {
       font-size: 2.1em;
       font-weight: 400;
@@ -93,11 +107,22 @@
         right: 0;
         left: 0;
         z-index: 6;
-        padding: 0 $pad;
+        @include media(mobile) {
+          padding: 0 20px;
+        };
+        @include media(tablet) {
+          padding: 0 40px;
+        };
+        @include media(laptop) {
+          padding: 0 70px;
+        };
+        @include media(desktop) {
+          padding: 0 100px;
+        };
         a {
           line-height: 1.7;
           &.add-new {
-            margin: 6px 0;
+            margin: 5px 0;
           }
         }
       }
@@ -113,6 +138,12 @@
         padding: 0 20px;
         border: 1px solid $dark;
         border-radius: 3px;
+        @include media(mobile) {
+          padding: 0 10px;
+          .icon-plus {
+            display: none;
+          }
+        };
         span {
           padding-right: 10px;
           font-size: 1.4em;
@@ -126,20 +157,46 @@
       }
       &.icon {
         font-size: 3.0em;
+        @include media(mobile) {
+          padding: 0 10px;
+          &-love {
+            display: none;
+          }
+        };
       }
     }
     .list-l {
       @include j-span (7/12);
+      @include media(tablet) {
+        @include j-span (1/2);
+      };
+      @include media(mobile) {
+        @include j-span (3/8);
+      };
     }
     .list-r {
       @include j-span (5/12);
+      @include media(tablet) {
+        @include j-span (1/2);
+      };
+      @include media(mobile) {
+        @include j-span (5/8);
+        position: relative;
+        right: -20px;
+      };
       li {
         @include j-span (1/5);
         text-align: right;
         list-style: none;
+        @include media(mobile) {
+          @include j-span (1/4);
+        }
         a {
           padding: 0 25px;
           float: right;
+          @include media(mobile) {
+            padding: 0 15px;
+          }
           &:hover {
             background-color: $darkgreen;
             color: $light;
@@ -155,12 +212,27 @@
 .list-files {
   .list-l {
     @include j-span (7/12);
+    @include media(tablet) {
+      @include j-span (1/2);
+    };
+    @include media(mobile) {
+      @include j-span (1/1);
+    };
   }
   .list-r {
     @include j-span (5/12);
+    @include media(tablet) {
+      @include j-span (1/2);
+    };
+    @include media(mobile) {
+      @include j-span (1/1);
+    };
     span {
       @include j-span (1/4);
       text-align: right;
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   .legend {
@@ -172,6 +244,9 @@
     line-height: 2.8em;
     transition: all 0.8s ease-out;
     height: 67px;
+    @include media(mobile) {
+      display: none;
+    };
     &.js-stick-on {
       line-height: 1.6em;
       background-color: transparent;
@@ -182,7 +257,18 @@
         right: 0;
         left: 0;
         z-index: 5;
-        padding: 0 $pad;
+        @include media(mobile) {
+          padding: 0 20px;
+        };
+        @include media(tablet) {
+          padding: 0 40px;
+        };
+        @include media(laptop) {
+          padding: 0 70px;
+        };
+        @include media(desktop) {
+          padding: 0 100px;
+        };
         line-height: 1.6em;
       }
     }
@@ -202,6 +288,14 @@
     }
     .list-r {
       font-size: 1.8em;
+      @include media(mobile) {
+        margin-top: 20px;
+        background: darken($dark, 5%);;
+        line-height: 1.5em;
+        span {
+          text-align: center;
+        }
+      };
     }
     .file-type {
       border: 1px solid $green;
@@ -220,6 +314,10 @@
     }
     .file-name {
       padding-left: 60px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     &:hover {
       background-color: lighten($dark, 5%);

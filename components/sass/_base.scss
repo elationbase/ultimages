@@ -1,10 +1,13 @@
 // _base.scss
 // ==============
+@import "mixins";
+@import "variables";
 body {
   font-family: $bodyFont;
   font-size: 10px;
   background: $dark;
   color: $light;
+  min-width: 400px;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $headFont;
@@ -27,9 +30,21 @@ a {
 .wrapper {
   @include j-cf();
   width: 100%;
-  padding: 0 $pad;
   margin: 0 auto;
   position: relative;
+  @include media(mobile) {
+    padding: 0 20px;
+  };
+  @include media(tablet) {
+    padding: 0 40px;
+  };
+  @include media(laptop) {
+    padding: 0 70px;
+  };
+  @include media(desktop) {
+    padding: 0 100px;
+  };
+
 }
 
 .button {
