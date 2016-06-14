@@ -5,21 +5,38 @@
   h1 {
     position: absolute;
     top: 70px;
-    left: $pad;
-    z-index: 2;
+    z-index: 5;
     width: 260px;
     height: 70px;
-    background: url('../img/logo-ultimages.svg') no-repeat;
     text-indent: -9999px;
     a {
       display: block;
+      height: 70px;
       color: $green;
       font-size: 1.8em;
       font-weight: 400;
+      background: url('../img/logo-ultimages.svg') center no-repeat;
       span {
         color: $midgrey;
       }
     }
+    @include media(mobile) {
+      width: 100%;
+      left: 0;
+      right: 0;
+      a {
+        background-size: 200px;
+      }
+    };
+    @include media(tablet) {
+      left: 40px;
+    };
+    @include media(laptop) {
+      left: 70px;
+    };
+    @include media(desktop) {
+      left: 100px;
+    };
   }
   nav {
     display: none;

@@ -6,14 +6,24 @@
   h1 {
     font-size: 4.0em;
     color: $green;
+    @include media(mobile) {
+      text-align: center;
+    };
   }
   h2 {
     font-size: 2.8em;
     color: $light;
+    @include media(mobile) {
+      text-align: center;
+      margin-top: 20px;
+    };
   }
   .search-wrapper {
     @include j-cf();
     margin-top: 20px;
+    @include media(mobile) {
+      text-align: center;
+    };
   }
   input[type="search"] {
     display: block;
@@ -34,6 +44,13 @@
       background-color: #fff;
       box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
     }
+    @include media(mobile) {
+      width: 100%;
+      border-radius: 4px;
+      float: none;
+      display: inline-block;
+      text-align: center;
+    };
   }
   .select {
     label {
@@ -54,6 +71,9 @@
         opacity: 1;
       }
     }
+    @include media(mobile) {
+      display: none;
+    };
   }
 }
 .userlist {
@@ -61,7 +81,18 @@
   ul {
     position: absolute;
     top: 100%;
-    right: -$pad;
+    @include media(mobile) {
+      right: -20px;
+    };
+    @include media(tablet) {
+      right: -40px;
+    };
+    @include media(laptop) {
+      right: -70px;
+    };
+    @include media(desktop) {
+      right: -100px;
+    };
     left: 0;
     padding-bottom: 15px;
     overflow-x: auto;
@@ -75,6 +106,10 @@
   }
   li {
     display: inline-block;
+    @include media(mobile) {
+      display: block;
+      text-align: center;
+    };
     margin: 20px 20px 0 0;
     transition: all 0.5s ease-out;
     a {
@@ -83,13 +118,26 @@
       background-color: rgba(255,255,255,0.5);
       @include j-cf();
       border-radius: 3px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      @include media(mobile) {
+        display: inline-block;
+        width: 100%;
+        max-width: 500px;
+      };
       img {
         width: 120px;
         float: left;
+        @include media(mobile) {
+          width: 100px;
+        };
       }
       .info {
         margin-left: 120px;
         padding: 50px 15px 0 15px;
+        @include media(mobile) {
+          margin-left: 100px;
+          padding-top: 10px;
+        };
       }
       &:hover {
         background-color: rgba(255,255,255,0.7);;
@@ -100,11 +148,13 @@
       color: $light;
       text-transform: uppercase;
       font-weight: 400;
+      text-align: left;
     }
     h3 {
       font-size: 18px;
       color: $dark;
       font-weight: 400;
+      text-align: left;
     }
   }
 }

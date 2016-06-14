@@ -6,10 +6,24 @@
   transition: all 0.3s ease-out;
 }
 
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
+@mixin media($point) {
+
+  $mobile: 768px;
+  $tablet: 1024px;
+  $laptop: 1280px;
+  $desktop: 1281px;
+
+  @if $point == mobile {
+    @media only screen and (max-width: $mobile - 1) { @content; }
   }
+  @else if $point == tablet {
+    @media only screen and (min-width: $mobile + 1) and (max-width: $tablet) { @content; }
+  }
+  @else if $point == laptop {
+    @media only screen and (min-width: $tablet + 1) and (max-width: $laptop) { @content; }
+  }
+  @else if $point == desktop {
+    @media only screen and (min-width: $desktop) { @content; }
+  }
+
 }

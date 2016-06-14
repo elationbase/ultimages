@@ -9527,18 +9527,19 @@ c){var e=a|0,f=c;void 0===f&&(f=Math.min(b(a),3));Math.pow(10,f);return 1==e&&0=
 //# sourceMappingURL=angular.min.js.map
 
 /*
- AngularJS v1.2.10
- (c) 2010-2014 Google, Inc. http://angularjs.org
+ AngularJS v1.5.6
+ (c) 2010-2016 Google, Inc. http://angularjs.org
  License: MIT
 */
-(function(h,e,A){'use strict';function u(w,q,k){return{restrict:"ECA",terminal:!0,priority:400,transclude:"element",link:function(a,c,b,f,n){function y(){l&&(l.$destroy(),l=null);g&&(k.leave(g),g=null)}function v(){var b=w.current&&w.current.locals;if(e.isDefined(b&&b.$template)){var b=a.$new(),f=w.current;g=n(b,function(d){k.enter(d,null,g||c,function(){!e.isDefined(t)||t&&!a.$eval(t)||q()});y()});l=f.scope=b;l.$emit("$viewContentLoaded");l.$eval(h)}else y()}var l,g,t=b.autoscroll,h=b.onload||"";
-a.$on("$routeChangeSuccess",v);v()}}}function z(e,h,k){return{restrict:"ECA",priority:-400,link:function(a,c){var b=k.current,f=b.locals;c.html(f.$template);var n=e(c.contents());b.controller&&(f.$scope=a,f=h(b.controller,f),b.controllerAs&&(a[b.controllerAs]=f),c.data("$ngControllerController",f),c.children().data("$ngControllerController",f));n(a)}}}h=e.module("ngRoute",["ng"]).provider("$route",function(){function h(a,c){return e.extend(new (e.extend(function(){},{prototype:a})),c)}function q(a,
-e){var b=e.caseInsensitiveMatch,f={originalPath:a,regexp:a},h=f.keys=[];a=a.replace(/([().])/g,"\\$1").replace(/(\/)?:(\w+)([\?\*])?/g,function(a,e,b,c){a="?"===c?c:null;c="*"===c?c:null;h.push({name:b,optional:!!a});e=e||"";return""+(a?"":e)+"(?:"+(a?e:"")+(c&&"(.+?)"||"([^/]+)")+(a||"")+")"+(a||"")}).replace(/([\/$\*])/g,"\\$1");f.regexp=RegExp("^"+a+"$",b?"i":"");return f}var k={};this.when=function(a,c){k[a]=e.extend({reloadOnSearch:!0},c,a&&q(a,c));if(a){var b="/"==a[a.length-1]?a.substr(0,a.length-
-1):a+"/";k[b]=e.extend({redirectTo:a},q(b,c))}return this};this.otherwise=function(a){this.when(null,a);return this};this.$get=["$rootScope","$location","$routeParams","$q","$injector","$http","$templateCache","$sce",function(a,c,b,f,n,q,v,l){function g(){var d=t(),m=r.current;if(d&&m&&d.$$route===m.$$route&&e.equals(d.pathParams,m.pathParams)&&!d.reloadOnSearch&&!x)m.params=d.params,e.copy(m.params,b),a.$broadcast("$routeUpdate",m);else if(d||m)x=!1,a.$broadcast("$routeChangeStart",d,m),(r.current=
-d)&&d.redirectTo&&(e.isString(d.redirectTo)?c.path(u(d.redirectTo,d.params)).search(d.params).replace():c.url(d.redirectTo(d.pathParams,c.path(),c.search())).replace()),f.when(d).then(function(){if(d){var a=e.extend({},d.resolve),c,b;e.forEach(a,function(d,c){a[c]=e.isString(d)?n.get(d):n.invoke(d)});e.isDefined(c=d.template)?e.isFunction(c)&&(c=c(d.params)):e.isDefined(b=d.templateUrl)&&(e.isFunction(b)&&(b=b(d.params)),b=l.getTrustedResourceUrl(b),e.isDefined(b)&&(d.loadedTemplateUrl=b,c=q.get(b,
-{cache:v}).then(function(a){return a.data})));e.isDefined(c)&&(a.$template=c);return f.all(a)}}).then(function(c){d==r.current&&(d&&(d.locals=c,e.copy(d.params,b)),a.$broadcast("$routeChangeSuccess",d,m))},function(c){d==r.current&&a.$broadcast("$routeChangeError",d,m,c)})}function t(){var a,b;e.forEach(k,function(f,k){var p;if(p=!b){var s=c.path();p=f.keys;var l={};if(f.regexp)if(s=f.regexp.exec(s)){for(var g=1,q=s.length;g<q;++g){var n=p[g-1],r="string"==typeof s[g]?decodeURIComponent(s[g]):s[g];
-n&&r&&(l[n.name]=r)}p=l}else p=null;else p=null;p=a=p}p&&(b=h(f,{params:e.extend({},c.search(),a),pathParams:a}),b.$$route=f)});return b||k[null]&&h(k[null],{params:{},pathParams:{}})}function u(a,c){var b=[];e.forEach((a||"").split(":"),function(a,d){if(0===d)b.push(a);else{var e=a.match(/(\w+)(.*)/),f=e[1];b.push(c[f]);b.push(e[2]||"");delete c[f]}});return b.join("")}var x=!1,r={routes:k,reload:function(){x=!0;a.$evalAsync(g)}};a.$on("$locationChangeSuccess",g);return r}]});h.provider("$routeParams",
-function(){this.$get=function(){return{}}});h.directive("ngView",u);h.directive("ngView",z);u.$inject=["$route","$anchorScroll","$animate"];z.$inject=["$compile","$controller","$route"]})(window,window.angular);
+(function(C,d){'use strict';function w(s,h,f){return{restrict:"ECA",terminal:!0,priority:400,transclude:"element",link:function(a,e,b,g,y){function k(){n&&(f.cancel(n),n=null);l&&(l.$destroy(),l=null);m&&(n=f.leave(m),n.then(function(){n=null}),m=null)}function z(){var b=s.current&&s.current.locals;if(d.isDefined(b&&b.$template)){var b=a.$new(),g=s.current;m=y(b,function(b){f.enter(b,null,m||e).then(function(){!d.isDefined(u)||u&&!a.$eval(u)||h()});k()});l=g.scope=b;l.$emit("$viewContentLoaded");
+l.$eval(r)}else k()}var l,m,n,u=b.autoscroll,r=b.onload||"";a.$on("$routeChangeSuccess",z);z()}}}function v(d,h,f){return{restrict:"ECA",priority:-400,link:function(a,e){var b=f.current,g=b.locals;e.html(g.$template);var y=d(e.contents());if(b.controller){g.$scope=a;var k=h(b.controller,g);b.controllerAs&&(a[b.controllerAs]=k);e.data("$ngControllerController",k);e.children().data("$ngControllerController",k)}a[b.resolveAs||"$resolve"]=g;y(a)}}}var r=d.module("ngRoute",["ng"]).provider("$route",function(){function s(a,
+e){return d.extend(Object.create(a),e)}function h(a,d){var b=d.caseInsensitiveMatch,g={originalPath:a,regexp:a},f=g.keys=[];a=a.replace(/([().])/g,"\\$1").replace(/(\/)?:(\w+)(\*\?|[\?\*])?/g,function(a,d,b,e){a="?"===e||"*?"===e?"?":null;e="*"===e||"*?"===e?"*":null;f.push({name:b,optional:!!a});d=d||"";return""+(a?"":d)+"(?:"+(a?d:"")+(e&&"(.+?)"||"([^/]+)")+(a||"")+")"+(a||"")}).replace(/([\/$\*])/g,"\\$1");g.regexp=new RegExp("^"+a+"$",b?"i":"");return g}var f={};this.when=function(a,e){var b=
+d.copy(e);d.isUndefined(b.reloadOnSearch)&&(b.reloadOnSearch=!0);d.isUndefined(b.caseInsensitiveMatch)&&(b.caseInsensitiveMatch=this.caseInsensitiveMatch);f[a]=d.extend(b,a&&h(a,b));if(a){var g="/"==a[a.length-1]?a.substr(0,a.length-1):a+"/";f[g]=d.extend({redirectTo:a},h(g,b))}return this};this.caseInsensitiveMatch=!1;this.otherwise=function(a){"string"===typeof a&&(a={redirectTo:a});this.when(null,a);return this};this.$get=["$rootScope","$location","$routeParams","$q","$injector","$templateRequest",
+"$sce",function(a,e,b,g,h,k,r){function l(q){var c=t.current;(A=(p=w())&&c&&p.$$route===c.$$route&&d.equals(p.pathParams,c.pathParams)&&!p.reloadOnSearch&&!x)||!c&&!p||a.$broadcast("$routeChangeStart",p,c).defaultPrevented&&q&&q.preventDefault()}function m(){var q=t.current,c=p;if(A)q.params=c.params,d.copy(q.params,b),a.$broadcast("$routeUpdate",q);else if(c||q)x=!1,(t.current=c)&&c.redirectTo&&(d.isString(c.redirectTo)?e.path(v(c.redirectTo,c.params)).search(c.params).replace():e.url(c.redirectTo(c.pathParams,
+e.path(),e.search())).replace()),g.when(c).then(n).then(function(e){c==t.current&&(c&&(c.locals=e,d.copy(c.params,b)),a.$broadcast("$routeChangeSuccess",c,q))},function(d){c==t.current&&a.$broadcast("$routeChangeError",c,q,d)})}function n(a){if(a){var c=d.extend({},a.resolve);d.forEach(c,function(a,b){c[b]=d.isString(a)?h.get(a):h.invoke(a,null,null,b)});a=u(a);d.isDefined(a)&&(c.$template=a);return g.all(c)}}function u(a){var c,b;d.isDefined(c=a.template)?d.isFunction(c)&&(c=c(a.params)):d.isDefined(b=
+a.templateUrl)&&(d.isFunction(b)&&(b=b(a.params)),d.isDefined(b)&&(a.loadedTemplateUrl=r.valueOf(b),c=k(b)));return c}function w(){var a,c;d.forEach(f,function(b,g){var f;if(f=!c){var h=e.path();f=b.keys;var l={};if(b.regexp)if(h=b.regexp.exec(h)){for(var k=1,n=h.length;k<n;++k){var m=f[k-1],p=h[k];m&&p&&(l[m.name]=p)}f=l}else f=null;else f=null;f=a=f}f&&(c=s(b,{params:d.extend({},e.search(),a),pathParams:a}),c.$$route=b)});return c||f[null]&&s(f[null],{params:{},pathParams:{}})}function v(a,b){var e=
+[];d.forEach((a||"").split(":"),function(a,d){if(0===d)e.push(a);else{var f=a.match(/(\w+)(?:[?*])?(.*)/),g=f[1];e.push(b[g]);e.push(f[2]||"");delete b[g]}});return e.join("")}var x=!1,p,A,t={routes:f,reload:function(){x=!0;var b={defaultPrevented:!1,preventDefault:function(){this.defaultPrevented=!0;x=!1}};a.$evalAsync(function(){l(b);b.defaultPrevented||m()})},updateParams:function(a){if(this.current&&this.current.$$route)a=d.extend({},this.current.params,a),e.path(v(this.current.$$route.originalPath,
+a)),e.search(a);else throw B("norout");}};a.$on("$locationChangeStart",l);a.$on("$locationChangeSuccess",m);return t}]}),B=d.$$minErr("ngRoute");r.provider("$routeParams",function(){this.$get=function(){return{}}});r.directive("ngView",w);r.directive("ngView",v);w.$inject=["$route","$anchorScroll","$animate"];v.$inject=["$compile","$controller","$route"]})(window,window.angular);
 //# sourceMappingURL=angular-route.min.js.map
 
 /*
@@ -9608,16 +9609,16 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
   ]);
 
   myApp.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.
-    when('/', {
+    $routeProvider
+    .when('/', {
       templateUrl: 'views/list.html',
       controller: 'ListController'
-    }).
-    when('/user/:itemId', {
+    })
+    .when('/user/:itemId', {
       templateUrl: 'views/user.html',
       controller: 'UserController'
-    }).
-    otherwise({
+    })
+    .otherwise({
       redirectTo: '/'
     });
   }]);
@@ -9633,6 +9634,7 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
       $scope.users = data;
       $scope.userOrder = 'name';
     });
+    $scope.pageClass = 'page-list';
   }])
 
   .controller('UserController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
@@ -9640,6 +9642,7 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
       $scope.users = data;
       $scope.whichItem = $routeParams.itemId;
     });
+    $scope.pageClass = 'page-user';
   }])
 
 })(window.angular);
@@ -9681,14 +9684,309 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
       }
     );
 
+    userDirectives.directive( "modalDelete",
+      function() {
+        return({
+          link: link,
+          restrict: "A",
+          templateUrl: 'views/user-directives/modal-delete.html'
+        });
+        function link( scope, element, attributes ) {
+          element.on("click", '.button', function(event) {
+            event.preventDefault();
+            $('.modal').removeClass('modal-visible');
+            setTimeout(function(){
+                $('.modal').removeClass('modal-active');
+            }, 500);
+          });
+        }
+      }
+    );
+
+    userDirectives.directive( "modalImage",
+      function() {
+        return({
+          link: link,
+          restrict: "A",
+          templateUrl: 'views/user-directives/modal-image.html'
+        });
+        function link( scope, element, attributes ) {
+          var numRand = Math.floor(Math.random() * 20);
+          $('#modal-image .modal-content').html('<img src="img/artist/' + numRand + '.jpg" alt="" />');
+          $('main').on('click', '.file a', function(event, element) {
+      			event.preventDefault();
+            numRand = Math.floor(Math.random() * 20);
+            $('#modal-image .modal-content').html('<img src="img/artist/' + numRand + '.jpg" alt="" />');
+      		});
+
+          element.on("click", '.button', function(event) {
+            event.preventDefault();
+            $('.modal').removeClass('modal-visible');
+            setTimeout(function(){
+                $('.modal').removeClass('modal-active');
+            }, 500);
+          });
+        }
+      }
+    );
+
+    userDirectives.directive( "modalAdd",
+      function() {
+        return({
+          link: link,
+          restrict: "A",
+          templateUrl: 'views/user-directives/modal-add.html'
+        });
+        function link( scope, element, attributes ) {
+          document.querySelector('.file-upload').addEventListener("change", function() {
+            var self = this;
+            var file = self.files[0];
+            var reader = new FileReader();
+            reader.onload = function() {
+              var img = document.createElement('img');
+              img.src = reader.result;
+              self.parentNode.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+          }, false);
+        }
+      }
+    );
+
+
+
+        userDirectives.directive( "modalAddImproove",
+          function() {
+            return({
+              link: link,
+              restrict: "A",
+              templateUrl: 'views/user-directives/modal-add2.html'
+            });
+
+            function link( scope, element, attributes ) {
+              var holder = document.getElementById('holder'),
+                  tests = {
+                    filereader: typeof FileReader != 'undefined',
+                    dnd: 'draggable' in document.createElement('span'),
+                    formdata: !!window.FormData,
+                    progress: "upload" in new XMLHttpRequest
+                  },
+                  support = {
+                    filereader: document.getElementById('filereader'),
+                    formdata: document.getElementById('formdata'),
+                    progress: document.getElementById('progress')
+                  },
+                  acceptedTypes = {
+                    'image/png': true,
+                    'image/jpeg': true,
+                    'image/gif': true
+                  },
+                  progress = document.getElementById('uploadprogress'),
+                  fileupload = document.getElementById('upload');
+
+              "filereader formdata progress".split(' ').forEach(function (api) {
+                if (tests[api] === false) {
+                  support[api].className = 'fail';
+                } else {
+                  // FFS. I could have done el.hidden = true, but IE doesn't support
+                  // hidden, so I tried to create a polyfill that would extend the
+                  // Element.prototype, but then IE10 doesn't even give me access
+                  // to the Element object. Brilliant.
+                  support[api].className = 'hidden';
+                }
+              });
+
+              function previewfile(file) {
+                if (tests.filereader === true && acceptedTypes[file.type] === true) {
+                  var reader = new FileReader();
+                  reader.onload = function (event) {
+                    var image = new Image();
+                    image.src = event.target.result;
+                    image.width = 250; // a fake resize
+                    holder.appendChild(image);
+                  };
+
+                  reader.readAsDataURL(file);
+                }  else {
+                  holder.innerHTML += '<p>Uploaded ' + file.name + ' ' + (file.size ? (file.size/1024|0) + 'K' : '');
+                  console.log(file);
+                }
+              }
+
+              function readfiles(files) {
+                  debugger;
+                  var formData = tests.formdata ? new FormData() : null;
+                  for (var i = 0; i < files.length; i++) {
+                    if (tests.formdata) formData.append('file', files[i]);
+                    previewfile(files[i]);
+                  }
+
+                  // now post a new XHR request
+                  if (tests.formdata) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/devnull.php');
+                    xhr.onload = function() {
+                      progress.value = progress.innerHTML = 100;
+                    };
+
+                    if (tests.progress) {
+                      xhr.upload.onprogress = function (event) {
+                        if (event.lengthComputable) {
+                          var complete = (event.loaded / event.total * 100 | 0);
+                          progress.value = progress.innerHTML = complete;
+                        }
+                      }
+                    }
+
+                    xhr.send(formData);
+                  }
+              }
+
+              if (tests.dnd) {
+                holder.ondragover = function () { this.className = 'hover'; return false; };
+                holder.ondragend = function () { this.className = ''; return false; };
+                holder.ondrop = function (e) {
+                  this.className = '';
+                  e.preventDefault();
+                  readfiles(e.dataTransfer.files);
+                }
+              } else {
+                fileupload.className = 'hidden';
+                fileupload.querySelector('input').onchange = function () {
+                  readfiles(this.files);
+                };
+              }
+            }
+        });
+
 })(window.angular);
+
+(function($, window, document) {
+    "use strict";
+    var winWidth, winHeight, modalWidth, modalHeight;
+    var openModal;
+    var cwModal = {
+        launch: function (ele) {
+            openModal = ele;
+            $(ele).addClass('modal-active');
+            setTimeout(function(){
+                $(ele).addClass('modal-visible');
+                cwModal.setPosition(ele);
+            },10);
+        },
+        close: function (time) {
+            $('.modal').removeClass('modal-visible');
+            setTimeout(function(){
+                $('.modal').removeClass('modal-active');
+            }, time/2);
+        },
+        setPosition: function() {
+            winWidth = $(window).width()/ 2;
+            winHeight = $(window).height()/ 2;
+            modalWidth = $(openModal + ' .modal-body').width()/ 2;
+            modalHeight = $(openModal + ' .modal-body').height()/2;
+            $(openModal + ' .modal-wrap').css('left', winWidth - modalWidth);
+            $(openModal + ' .modal-content').css('maxHeight', (winHeight *2) - 100);
+            if (modalHeight < winHeight) {
+                $(openModal + ' .modal-wrap').css('top', winHeight - modalHeight);
+            }
+        }
+    };
+
+    $(document).ready(function(){
+
+        // default transition time ms
+        var time = 400;
+
+        // Open Modal win with all tag elevents with the attribute "data-modal-target"
+        $('body').on('click', '[data-modal-target]', function(event) {
+            event.preventDefault();
+            // Read the value of the attribute "data-modal-target"
+            var target = '#' + $(this).data('modal-target');
+            // Check class to set the speed of transition
+            if ($(target).hasClass('modal-fast')) {
+                time = 200
+            } else if ($(target).hasClass('modal-slow')) {
+                time = 600
+            }
+            // Open modal window object function
+            cwModal.launch(target, time);
+        });
+
+        // Close Modal win with all elevents with .modal-close" and ".modal-mask" class
+        $('body').on('click', '.modal-close, .modal-mask', function(event) {
+            event.preventDefault();
+            cwModal.close(time);
+        });
+
+        // Close Modal win with esc key.
+        $(document).keydown(function(event) {
+            // Check key is esc && check modal win is open && check if video is not in full screen mode
+            if (event.keyCode == 27 && $('.modal').is(':visible') && window.innerHeight !== screen.height ) {
+                // Close modal window object function
+                cwModal.close(time);
+            }
+        });
+
+        // If user size the window re-set modal position
+        $(window).on('resize', function () {
+            // Close modal window object function
+            if ($('.modal').is(':visible')) {
+                var visibleModal = $('.modal').is(':visible')[0];
+                cwModal.setPosition(visibleModal);
+            }
+        });
+
+    });
+
+}(window.jQuery, window, document));
 
 // remap jQuery to $
 (function($){
 
 	/* trigger when page is ready */
 	$(document).ready(function (){
-	
+
+		/*
+			Stick elements
+		*/
+		var winTop = $(window).scrollTop();
+		var stickClass = 'js-stick-on';
+		var offset, pos;
+
+		var addStick = function(offset) {
+
+			winTop = $(window).scrollTop();
+
+			$('.js-stick-ele').each(function() {
+
+				offset = $(this).data('offset');
+				pos = $(this).position().top - winTop;
+
+				if (pos < offset) {
+					if (!$(this).hasClass(stickClass)) {
+						$(this).addClass(stickClass);
+					}
+				} else {
+					if ($(this).hasClass(stickClass)) {
+						$(this).removeClass(stickClass);
+					}
+				}
+			});
+		};
+
+		$(window).on('scroll', addStick);
+
+
+		$('main').on('click', '.file a', function(event) {
+			event.preventDefault();
+			if ($(this).parent('li').hasClass('is-active')) {
+				$('.file').removeClass('is-active');
+			} else {
+				$('.file').removeClass('is-active');
+				$(this).parent('li').addClass('is-active');
+			}
+		});
 
 	});
 
