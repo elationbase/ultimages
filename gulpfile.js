@@ -23,10 +23,11 @@ var htmlFiles = ['builds/development/*.html'],
 			'components/scripts/modules/modal.js',
 			'components/scripts/global.js'
 		],
-		sassFiles = ['components/sass/style.scss'],
-		htmlFiles = ['builds/development/*.html'],
-		viewFiles = ['builds/development/views/*.html'],
-		imgFiles  = ['builds/development/img/**/*.*'];
+		sassFiles  = ['components/sass/style.scss'],
+		theneFiles = ['components/sass/themes/*.scss'],
+		htmlFiles  = ['builds/development/*.html'],
+		viewFiles  = ['builds/development/views/*.html'],
+		imgFiles   = ['builds/development/img/**/*.*'];
 
 
 // Check for environment and set deault to dev
@@ -61,13 +62,25 @@ gulp.task('js', function () {
 // CSS & SASS files
 gulp.task('sass', function () {
  return gulp
- 	 .src('components/sass/**/*.scss')
+ 	 .src(sassFiles)
    .pipe(sass({
 		 outputStyle: sassStyle,
 		 image: outputDir + 'img',
 	 }).on('error', sass.logError))
    .pipe(autoprefixer('last 2 version', 'safari 4', 'ie 8', 'ie 9'))
 	 .pipe(gulp.dest(outputDir + 'css'))
+	 .pipe(connect.reload());
+});
+// CSS & SASS files
+gulp.task('themesass', function () {
+ return gulp
+ 	 .src(theneFiles)
+   .pipe(sass({
+		 outputStyle: sassStyle,
+		 image: outputDir + 'img/themes',
+	 }).on('error', sass.logError))
+   .pipe(autoprefixer('last 2 version', 'safari 4', 'ie 8', 'ie 9'))
+	 .pipe(gulp.dest(outputDir + 'css/themes'))
 	 .pipe(connect.reload());
 });
 
@@ -108,10 +121,11 @@ gulp.task('connect', function() {
 gulp.task('watch', function () {
 	gulp.watch(jsFiles, ['js']);
 	gulp.watch('components/sass/*.scss', ['sass']);
+	gulp.watch('components/sass/themes/*.scss', ['themesass']);
 	gulp.watch(htmlFiles, ['html']);
 	gulp.watch(viewFiles, ['views']);
 	gulp.watch(imgFiles, ['img']);
 });
 
 
-gulp.task('default', ['js', 'sass', 'img', 'watch', 'connect']);
+gulp.task('default', ['js', 'sass', 'themesass', 'img', 'watch', 'connect']);
