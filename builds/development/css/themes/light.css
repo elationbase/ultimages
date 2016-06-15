@@ -10,7 +10,7 @@ body {
 }
 
 .search-section {
-  background: url(../../img/main-bg-light.jpg) bottom right;
+  background: url("../../img/bgs/main-bg-light.jpg") bottom right;
   background-size: cover;
 }
 
@@ -18,10 +18,12 @@ body {
   color: #0e98c2;
   text-transform: uppercase;
   font-size: 3.0em;
+  text-shadow: 0 0 40px #000;
 }
 
 .search-section h2 {
   color: #898989;
+  text-shadow: 0 0 40px #000;
 }
 
 .search-section input[type="search"] {

@@ -9730,6 +9730,8 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
       }
     );
 
+
+
     userDirectives.directive( "modalAdd",
       function() {
         return({
@@ -9859,6 +9861,36 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
             }
         });
 
+        userDirectives.directive( "slideshowBg",
+          function() {
+            return({
+              link: link,
+              restrict: "A",
+              templateUrl: 'views/user-directives/slideshow-bg.html'
+            });
+            function link( scope, element, attributes ) {
+              element.hide();
+              var cycleImages = function() {
+                var ele = element[0];
+              	var $active = $(ele).find('.is-active');
+              	var $first = $(ele).find('.bg-img:first');
+              	var $next = ($active.next().length > 0) ? $active.next() : $first;
+              	$next.css('z-index',2);//move the next image up the pile
+              	$active.fadeOut(1000,function(){//fade out the top image
+              		$active.css('z-index',1).show().removeClass('is-active');//reset the z-index and unhide the image
+              		$next.css('z-index',3).addClass('is-active');//make the next image the top one
+              	});
+              }
+              element.delay(6000).fadeIn(1000, function () {
+                setInterval(cycleImages, 6000);
+              });//fade the background back in once all the images are loaded
+              // run every 5s
+
+
+            }
+          }
+        );
+
 })(window.angular);
 
 (function($, window, document) {
@@ -9987,6 +10019,16 @@ c.event,c.classes,c.options)}return function(a){if(a.from&&a.to){var b=d(a.from)
 				$(this).parent('li').addClass('is-active');
 			}
 		});
+
+		function cycleImages(){
+			var $active = $('#background_cycler .active');
+			var $next = ($('#background_cycler .active').next().length > 0) ? $('#background_cycler .active').next() : $('#background_cycler .img:first');
+			$next.css('z-index',2);//move the next image up the pile
+			$active.fadeOut(1000,function(){//fade out the top image
+				$active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+				$next.css('z-index',3).addClass('active');//make the next image the top one
+			});
+		}
 
 	});
 
