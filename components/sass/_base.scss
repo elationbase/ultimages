@@ -1,16 +1,15 @@
 // _base.scss
 // ==============
-@import "mixins";
-@import "variables";
 body {
   font-family: $bodyFont;
+  font-weight: 100;
   font-size: 10px;
   background: $dark;
   color: $light;
   min-width: 400px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 200;
+  font-weight: 100;
 }
 
 a {
