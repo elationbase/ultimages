@@ -82,6 +82,19 @@ body {
   @media only screen and (max-width: 767px) {
       top: 0px;
   }
+
+    @media only screen and (max-width: 400px) {
+      top: 0px;
+    }
+    @media only screen and (min-width: 767px) {
+        left: -40px;
+    }
+    @media only screen and (min-width: 1025px) {
+      left: -70px;
+    }
+    @media only screen and (min-width: 1281px) {
+      left: -100px;
+    }
 }
 
 .userlist li a {

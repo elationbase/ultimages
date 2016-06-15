@@ -99,6 +99,30 @@ body {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  .userlist ul {
+    top: 0px;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .userlist ul {
+    left: -40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .userlist ul {
+    left: -70px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .userlist ul {
+    left: -100px;
+  }
+}
+
 .userlist li a {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
