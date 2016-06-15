@@ -3,7 +3,7 @@
   var userControllers = angular.module('userControllers', ['ngAnimate'])
 
   .controller('ListController', ['$scope', '$http', function($scope, $http) {
-    $http.get('/js/data.json').success(function(data) {
+    $http.get('js/data.json').success(function(data) {
       $scope.users = data;
       $scope.userOrder = 'name';
     });
