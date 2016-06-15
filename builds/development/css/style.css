@@ -1334,6 +1334,20 @@ article.users {
   color: #2c3e50;
 }
 
+.add-new-bottom {
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto 60px auto;
+  display: block;
+}
+
+.add-new-bottom .icon-plus {
+  font-size: 1.5em;
+  vertical-align: -7px;
+  padding-right: 12px;
+}
+
 @keyframes scaleFace {
   from {
     opacity: 0;
