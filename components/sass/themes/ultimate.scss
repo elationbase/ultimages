@@ -111,12 +111,25 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     h2 {
       color: $brand;
+      margin: 0;
+      display: block;
+      text-align: left;
+      margin-left: 40px;
+    }
+    h3 {
+      text-align: left;
+      margin-left: 40px;
     }
   }
   .face {
     bottom: -100px;
     left: 100px;
     margin-left: 0;
+    @media only screen and (max-width: 767px) {
+      bottom: -153px; 
+      left: 0px;
+      width: 153px;
+    }
   }
 }
 .recap .recap-l {
@@ -237,4 +250,33 @@ color: #F1F1F1;
 .animate-repeat.ng-enter.ng-enter-active {
   opacity:1;
   margin-left: 0;
+}
+
+.menu .icon-plus {
+  color: white;
+}
+.bio.select > li {
+  background-color: transparent;
+}
+.hero .info .select .icon-plus { color: $brand; }
+.menu .menu-nav li:not(.ng-scope) {
+  background-color: $brand;
+}
+.menu .menu-nav li a {
+  color: $dark;
+  &:hover {
+    background-color: darken($light, 5%);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .list-files .file .list-r {
+    background: darken($light, 5%);
+  }
+}
+
+.menu .icon-plus {
+  top: 53px;
+  color: #000;
+  text-shadow: 0 0 5px #fff;
 }

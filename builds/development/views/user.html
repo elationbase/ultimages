@@ -1,10 +1,29 @@
 <article ng-model="users" class="users">
+  <aside class="menu">
+    <span class="icon-plus"></span>
+    <div class="menu-mask">
+    </div>
+    <nav class="menu-nav">
+      <ul>
+        <li><b>Ultimages photographers</b></li>
+        <li ng-repeat="user in users"><a href="#/user/{{$index}}">{{user.name}}</a></li>
+      </ul>
+    </nav>
+  </aside>
   <header class="hero {{users[whichItem].shortname}}">
     <img class="face" ng-src="img/{{users[whichItem].shortname}}.jpg">
     <div class="info">
+      <ul class="select bio">
+        <li>
+          <span class="icon-plus"></span>
+          <ul>
+            <li><b>Biography:</b> {{users[whichItem].bio}}</li>
+            <!--li ng-repeat="user in users"><a href="#/user/{{$index}}">{{user.name}}</a></li--> 
+          </ul>
+        </li>
+      </ul>
       <h2>{{users[whichItem].name}}</h2>
       <h3>member sice {{users[whichItem].member}}</h3>
-      <div class="bio">{{users[whichItem].bio}}</div>
     </div>
   </header>
   <section class="recap wrapper">

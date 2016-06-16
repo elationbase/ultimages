@@ -144,3 +144,25 @@ color: #F1F1F1;
     }
   }
 }
+.menu .icon-plus {
+  color: white;
+}
+.bio.select > li {
+  background-color: transparent;
+}
+.hero .info .select .icon-plus { color: $brand; }
+.menu .menu-nav li:not(.ng-scope) {
+  background-color: $brand;
+}
+.menu .menu-nav li a {
+  color: $dark;
+  &:hover {
+    background-color: darken($light, 5%);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .list-files .file .list-r {
+    background: darken($light, 5%);
+  }
+}

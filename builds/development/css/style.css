@@ -489,6 +489,131 @@ main {
   display: none;
 }
 
+.menu .menu-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background-color: transparent;
+  transition: all 0.4s ease-out;
+  visibility: hidden;
+}
+
+.nav-is-open .menu .menu-mask {
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: visible;
+  left: 25%;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-is-open .menu .menu-mask {
+    left: 80%;
+  }
+}
+
+.menu .icon-plus {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  margin-left: 0;
+  z-index: 2;
+  font-size: 2em;
+  cursor: pointer;
+  text-shadow: 0 0 5px #000;
+  transition: all 0.4s ease-out;
+}
+
+.menu .icon-plus:hover {
+  transform: scale(1.2) rotate(45deg);
+  color: #add278;
+}
+
+.nav-is-open .menu .icon-plus {
+  margin-left: 25%;
+  z-index: 9;
+  transform: scale(1.2) rotate(45deg);
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-is-open .menu .icon-plus {
+    margin-left: 80%;
+  }
+}
+
+.menu .menu-nav ul {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: -25%;
+  width: 25%;
+  overflow: auto;
+  transition: left 0.4s ease-out;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu .menu-nav ul {
+    left: -80%;
+    width: 80%;
+  }
+}
+
+.nav-is-open .menu .menu-nav ul {
+  left: 0;
+}
+
+.menu .menu-nav li {
+  border-bottom: 1px solid #999999;
+}
+
+.menu .menu-nav li:not(.ng-scope) {
+  background-color: #add278;
+  color: #2c3e50;
+  padding: 10px 20px;
+  font-size: 2.2em;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.menu .menu-nav li a {
+  display: block;
+  padding: 20px;
+  font-size: 2.2em;
+  line-height: 1;
+  color: #F1F1F1;
+}
+
+.menu .menu-nav li a:hover {
+  background-color: #233140;
+}
+
+body {
+  transition: margin 0.4s ease-out;
+}
+
+.nav-is-open {
+  margin-left: 25%;
+  margin-right: -25%;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-is-open {
+    margin-left: 80%;
+    margin-right: -80%;
+  }
+}
+
+body.no-animate {
+  transition: all 0s;
+}
+
+body.no-animate .menu-mask, body.no-animate .icon-plus, body.no-animate .menu-nav ul {
+  transition: all 0s;
+}
+
 .main-footer {
   padding: 130px 40px 100px 40px;
   background: url("../img/logo-ultimages.svg") center 80px/150px no-repeat #354b60;
@@ -559,11 +684,15 @@ main {
   border: none;
   outline: none;
   width: 70%;
+  height: 63px;
   max-width: 500px;
   font-size: 2.0em;
   border-radius: 4px 0 0 4px;
   background-color: #e4e4e4;
   transition: all, 0.4s, ease;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .search-section input[type="search"]:hover {
@@ -858,14 +987,8 @@ article.users {
   top: 70px;
   right: 0;
   background-color: #2c3e50;
-  padding: 20px 80px 20px 40px;
+  padding: 20px 20px 20px 10px;
   text-align: right;
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .hero .info {
-    padding: 20px 60px 20px 40px;
-  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -873,7 +996,6 @@ article.users {
     text-align: center;
     width: 100%;
     top: 160px;
-    padding: 20px 40px 20px 40px;
   }
 }
 
@@ -882,14 +1004,51 @@ article.users {
   font-weight: 400;
   text-transform: uppercase;
   padding-bottom: 5px;
+  display: inline;
+  margin-left: 50px;
 }
 
 .hero .info h3 {
   font-size: 1.8em;
 }
 
-.hero .info .bio {
-  display: none;
+.hero .info .select {
+  float: right;
+  width: auto;
+}
+
+.hero .info .select ul {
+  width: 400px;
+  text-align: right;
+  font-size: 1.1em;
+  box-shadow: none;
+  right: -10px;
+}
+
+.hero .info .select > li {
+  height: auto;
+  line-height: 1px;
+}
+
+.hero .info .select > li:hover ul {
+  top: 46px;
+  right: -10px;
+}
+
+.hero .info .select .icon-plus {
+  font-size: 2.0em;
+  color: #add278;
+  margin: -9px -10px 0 0;
+  padding-left: 10px;
+}
+
+.hero .info .select .icon-plus:hover {
+  transform: rotate(45deg);
+}
+
+.hero .info .select b {
+  font-weight: 400;
+  display: block;
 }
 
 .recap {
@@ -1218,6 +1377,13 @@ article.users {
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .list-files .list-r span {
+    font-size: 0.8em;
+  }
 }
 
 .list-files .legend {
