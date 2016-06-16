@@ -128,4 +128,4 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['js', 'sass', 'themesass', 'img', 'watch', 'connect']);
+gulp.task('default', ['js', 'sass', 'themesass', 'html', 'views', 'img', 'watch', 'connect']);

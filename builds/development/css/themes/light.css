@@ -171,3 +171,33 @@ article.users {
   background-color: #d1dcdd;
   color: #2c3e50;
 }
+
+.menu .icon-plus {
+  color: white;
+}
+
+.bio.select > li {
+  background-color: transparent;
+}
+
+.hero .info .select .icon-plus {
+  color: #0e98c2;
+}
+
+.menu .menu-nav li:not(.ng-scope) {
+  background-color: #0e98c2;
+}
+
+.menu .menu-nav li a {
+  color: #2c3e50;
+}
+
+.menu .menu-nav li a:hover {
+  background-color: #dddddd;
+}
+
+@media only screen and (max-width: 767px) {
+  .list-files .file .list-r {
+    background: #dddddd;
+  }
+}
