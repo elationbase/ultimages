@@ -137,19 +137,6 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.hero .info h2 {
-  color: #8ab122;
-  margin: 0;
-  display: block;
-  text-align: left;
-  margin-left: 40px;
-}
-
-.hero .info h3 {
-  text-align: left;
-  margin-left: 40px;
-}
-
 .hero .face {
   bottom: -100px;
   left: 100px;
